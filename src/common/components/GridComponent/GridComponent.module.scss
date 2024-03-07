@@ -1,0 +1,10 @@
+.services_grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
