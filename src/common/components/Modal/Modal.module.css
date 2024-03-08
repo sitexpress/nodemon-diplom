@@ -56,5 +56,25 @@
     text-align: center;
 }
 
+.icon_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.logo_name {
+    font-size: 24px;
+}
+img {
+      height: auto;
+      width: 60px;
+      fill: red;
+  }
+.logo_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 

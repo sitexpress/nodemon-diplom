@@ -9,8 +9,12 @@ import { Footer } from "../common/components/Footer/Footer";
 import { CustomizedTimeline } from "../common/components/Timeline/Timeline";
 import { NestedModal } from "../common/components/Modal/Modal";
 
+export type ModeType = "toApplyGrid1" | "toApplyAppBar" | "";
 function App() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
+    const [mode, setMode] = useState<ModeType>("");
+    const [btnData, setBtnData] = useState<string>("");
+
     return (
         <div className={s.app_container}>
             <AppBarComponent open={open} setOpen={setOpen} />
@@ -22,7 +26,13 @@ function App() {
                             <h2>Наши услуги</h2>
                         </div>
                         <div className={s.grid_content}>
-                            <ResponsiveGrid grid={"grid1"} />
+                            <ResponsiveGrid
+                                grid={"grid1"}
+                                open={open}
+                                setOpen={setOpen}
+                                setMode={setMode}
+                                setBtnData={setBtnData}
+                            />
                         </div>
                     </Box>
                 </Container>
@@ -46,12 +56,18 @@ function App() {
                             <h2>Тендерное сопровождение без риска</h2>
                         </div>
                         <div className={s.grid_content}>
-                            <ResponsiveGrid grid={"grid3"} />
+                            <ResponsiveGrid
+                                grid={"grid3"}
+                                open={open}
+                                setOpen={setOpen}
+                                setMode={setMode}
+                                setBtnData={setBtnData}
+                            />
                         </div>
                     </Box>
                 </Container>
             </div>
-            <NestedModal open={open} setOpen={setOpen} mode={"toApply"} />
+            <NestedModal open={open} setOpen={setOpen} mode={mode} btnData={btnData} />
 
             <div className={s.footer_wrapper}>
                 <Footer />

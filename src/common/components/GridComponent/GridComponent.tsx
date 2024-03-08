@@ -7,6 +7,7 @@ import { MediaCard } from "../MediaCardComponent/MediaCardComponent";
 import s from "./GridComponent.module.scss";
 import Button from "@mui/material/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { ModeType } from "../../../app/App";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -18,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const grid1Data = [
     {
-        heading: "Тендерное сопровождение",
+        heading: "Подготовка заявки на тендер",
         btn1: "на аукцион",
         btn2: "на конкурс",
         descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
@@ -26,38 +27,38 @@ const grid1Data = [
     },
     {
         heading: "Тендерное сопровождение",
-        btn1: "на аукцион",
-        btn2: "на конкурс",
-        descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
-        btn3: "Заказать подготовку заявки"
+        btn1: "1 тендер",
+        btn2: "10 тендеров",
+        descr: "Быстро и качественно подготовим документы, проконсультируем. Без сюрпризов и осечек.",
+        btn3: "Заказать сопровождение тендеров"
     },
     {
-        heading: "Тендерное сопровождение",
-        btn1: "на аукцион",
-        btn2: "на конкурс",
-        descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
-        btn3: "Заказать подготовку заявки"
+        heading: "Регистрация в ЕИС",
+        btn1: "за 5 дней",
+        btn2: "за 1 сутки",
+        descr: "Аккредитация на 8 федеральных торговых площадках по 44-ФЗ. Без отклонений.",
+        btn3: "Заказать регистрацию в ЕИС"
     },
     {
-        heading: "Тендерное сопровождение",
-        btn1: "на аукцион",
-        btn2: "на конкурс",
-        descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
-        btn3: "Заказать подготовку заявки"
+        heading: "Банковская гарантия",
+        btn1: "по 44-ФЗ",
+        btn2: "по 223-ФЗ",
+        descr: "Для ООО и ИП, без залога и поручительства с внесением в реестр. Без комиссии.",
+        btn3: "Получить банковскую гарантию"
     },
     {
-        heading: "Тендерное сопровождение",
-        btn1: "на аукцион",
-        btn2: "на конкурс",
-        descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
-        btn3: "Заказать подготовку заявки"
+        heading: "Обучение тендерам с нуля",
+        btn1: "индивидуальное",
+        btn2: "групповое",
+        descr: "Индивидуально, фокусировка на вашей отрасли. Практические занятия.",
+        btn3: "Заказать обучение тендерам"
     },
     {
-        heading: "Тендерное сопровождение",
-        btn1: "на аукцион",
-        btn2: "на конкурс",
-        descr: "Первая и вторая часть заявки на электронный аукцион. Гарантия допуска.",
-        btn3: "Заказать подготовку заявки"
+        heading: "Кредитование бизнеса",
+        btn1: "инвестиционный",
+        btn2: "на контракт",
+        descr: "Кредиты, гарантии, лизинг и факторинг – подберем оптимальное решение для задач.",
+        btn3: "Оставить заявку на кредит"
     }
 ];
 
@@ -84,8 +85,17 @@ const grid3Data = [
 
 type GridType = {
     grid: "grid1" | "grid3";
+    open: boolean;
+    setOpen: (value: boolean) => void;
+    setMode: (value: ModeType) => void;
+    setBtnData: (value: string) => void;
 };
-export const ResponsiveGrid: React.FC<GridType> = ({ grid }) => {
+export const ResponsiveGrid: React.FC<GridType> = ({ grid, open, setOpen, setMode, setBtnData, ...other }) => {
+    const onApplyHandler = (btnData: string) => {
+        setOpen(true);
+        setMode("toApplyGrid1");
+        setBtnData(btnData);
+    };
     return (
         <>
             {grid === "grid1" ? (
@@ -135,6 +145,7 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid }) => {
                                             color: "#42a5f5",
                                             "&:hover": { background: "#42a5f5", color: "white" }
                                         }}
+                                        onClick={() => onApplyHandler(card.btn3)}
                                     >
                                         {card.btn3}
                                     </Button>
