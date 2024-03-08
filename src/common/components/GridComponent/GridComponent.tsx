@@ -93,13 +93,13 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid }) => {
                     <Grid
                         container
                         spacing={{ xs: 2, md: 3 }}
-                        columns={{ xs: 2, sm: 4, md: 4, lg: 12 }}
+                        columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 12 }}
                         sx={{ justifyContent: "center" }}
                     >
                         {grid1Data.map((card, index) => (
                             <Grid item xs={2} sm={4} md={4} key={index}>
                                 <Item className={s.services_grid1} elevation={3}>
-                                    <div>{card.heading}</div>
+                                    <h4>{card.heading}</h4>
                                     <div className={s.btn_wrapper}>
                                         <Button
                                             className={s.btn1}
@@ -125,7 +125,7 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid }) => {
                                             {card.btn2}
                                         </Button>
                                     </div>
-                                    <div>{card.descr}</div>
+                                    <p className={s.descr}>{card.descr}</p>
                                     <Button
                                         className={s.btn3}
                                         variant="outlined"
@@ -149,28 +149,34 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid }) => {
                     <Grid
                         container
                         spacing={{ xs: 2, md: 3 }}
-                        columns={{ xs: 4, sm: 8, md: 12 }}
+                        columns={{ xs: 1, sm: 8, md: 12, lg: 12 }}
                         style={{ justifyContent: "center" }}
                         className={s.grid3_wrapper}
                     >
                         {grid3Data.map((card, index) => (
-                            <Grid item xs={2} sm={4} md={3} key={index}>
+                            <Grid item xs={2} sm={4} md={4} key={index}>
                                 <Item className={s.services_grid3} elevation={3}>
                                     <h3 className={s.heading}>{card.heading}</h3>
                                     <hr />
                                     <div>
                                         <ul className={s.services_grid3_content}>
                                             <li className={s.gc_li}>
-                                                <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
-                                                <span>{card.descr1}</span>
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr1}</div>
                                             </li>
                                             <li className={s.gc_li}>
-                                                <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
-                                                {card.descr2}
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr2}</div>
                                             </li>
                                             <li className={s.gc_li}>
-                                                <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
-                                                {card.descr3}
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr3}</div>
                                             </li>
                                         </ul>
                                     </div>

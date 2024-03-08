@@ -7,9 +7,9 @@
   justify-content: space-between;
   height: 400px;
   .btn3 {
-    width: 170px;
+    width: 220px;
     height: 40px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .btn_wrapper {
     display: flex;
@@ -24,6 +24,9 @@
       height: 40px;
     }
   }
+  .descr {
+    font-size: 16px;
+  }
 }
 .grid3_wrapper {
   flex-direction: row;
@@ -36,17 +39,24 @@
     .services_grid3_content {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-start;
-      font-size: 16px;
+      padding-left: 40px;
+
       text-decoration: dotted;
+      gap: 10px;
 
       .mark_icon {
         background: $palette_info_light;
       }
 
       .gc_li {
-        text-align: start;
+        display: flex;
+        justify-content: flex-start;
+        .descr {
+          font-size: 16px;
+          text-align: start;
+        }
       }
     }
   }
