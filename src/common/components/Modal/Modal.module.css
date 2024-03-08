@@ -1,0 +1,60 @@
+.modal_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    gap: 2px;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    borderRadius: 1px;
+    boxShadow: 24;
+}
+
+.box_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    boxShadow: 24;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.btn_wrapper {
+    display: flex;
+    padding-top: 30px;
+}
+
+.btn {
+    width: 340px;
+    height: 45px;
+}
+
+.btn_wrapper_add {
+    display: flex;
+    margin-left: 5px;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.textField {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.subheader {
+    padding-top: 20px;
+    max-width: 320px;
+    text-align: center;
+}
+
+
+

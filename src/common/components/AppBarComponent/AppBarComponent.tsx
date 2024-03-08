@@ -9,7 +9,12 @@ import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
 import logo from "../../../assets/icons/logo.svg";
 import s from "./AppBarComponent.module.scss";
-export const AppBarComponent = () => {
+
+type AppBarComponentType = {
+    open: boolean;
+    setOpen: (value: boolean) => void;
+};
+export const AppBarComponent: React.FC<AppBarComponentType> = ({ open, setOpen }) => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -63,6 +68,7 @@ export const AppBarComponent = () => {
                                         color: "white",
                                         "&:hover": { background: "#42a5f5", color: "white" }
                                     }}
+                                    onClick={() => setOpen(true)}
                                 >
                                     Отправить заявку
                                 </Button>

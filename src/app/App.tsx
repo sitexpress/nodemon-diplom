@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./App.module.scss";
 import { AppBarComponent } from "../common/components/AppBarComponent/AppBarComponent";
 import Box from "@mui/material/Box";
@@ -7,11 +7,13 @@ import SwipeableTextMobileStepper from "../common/components/SliderComponent/Sli
 import { ResponsiveGrid } from "../common/components/GridComponent/GridComponent";
 import { Footer } from "../common/components/Footer/Footer";
 import { CustomizedTimeline } from "../common/components/Timeline/Timeline";
+import { NestedModal } from "../common/components/Modal/Modal";
 
 function App() {
+    const [open, setOpen] = useState(false);
     return (
         <div className={s.app_container}>
-            <AppBarComponent />
+            <AppBarComponent open={open} setOpen={setOpen} />
             <SwipeableTextMobileStepper />
             <div className={s.grid1}>
                 <Container maxWidth="xl">
@@ -49,6 +51,7 @@ function App() {
                     </Box>
                 </Container>
             </div>
+            <NestedModal open={open} setOpen={setOpen} mode={"toApply"} />
 
             <div className={s.footer_wrapper}>
                 <Footer />
