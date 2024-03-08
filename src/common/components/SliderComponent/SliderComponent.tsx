@@ -187,12 +187,10 @@ export default function SwipeableTextMobileStepper() {
                                 <h2 className={s.subtitle}>{steps[activeStep].description}</h2>
                             </Box>
                             <Button
+                                className={s.content_btn}
                                 variant="outlined"
                                 sx={{
                                     background: "white",
-                                    mt: 3,
-                                    width: "200px",
-                                    height: "50px",
                                     color: "#42a5f5",
                                     "&:hover": { background: "#42a5f5", color: "white" }
                                 }}
@@ -211,14 +209,14 @@ export default function SwipeableTextMobileStepper() {
                 className={s.stepper}
                 nextButton={
                     <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                        Next
+                        {/*Next*/}
                         {theme.direction === "rtl" ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
                     </Button>
                 }
                 backButton={
                     <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
                         {theme.direction === "rtl" ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-                        Back
+                        {/*Back*/}
                     </Button>
                 }
             />

@@ -1,12 +1,14 @@
-.header_burger {
-    margin-right: 20px;
-}
+@import "src/styles/index";
+
 .header_wrapper {
     display: flex;
     justify-content: space-between;
     max-width: 1490px;
     padding-top: 5px;
     margin-bottom: 15px;
+    .hamburger {
+        display: none;
+    }
     .icon_logo {
         display: flex;
         flex-direction: column;
@@ -25,6 +27,7 @@
         .moto {
             text-align: left;
             font-size: 14px;
+            width: 350px;
             //padding-left: 10px;
         }
     }
@@ -70,9 +73,14 @@
         align-items: center;
         width: 360px;
         gap: 20px;
+        .btn {
+            width: 170px;
+            height: 40px;
+        }
     }
 }
 
+@import "AppBarComponent.media";
 
 
 

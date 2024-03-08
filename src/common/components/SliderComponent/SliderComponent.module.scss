@@ -1,3 +1,4 @@
+@import "src/styles/index";
 .box {
     position: relative;
     height: 500px;
@@ -6,66 +7,63 @@
     width: 100vw;
     overflow: hidden;
     background-color: transparent;
+    .img {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top:0;
+        left:0;
+        width: 100vw;
+        hight: 500px;
+        z-index: -1;
+        filter: brightness(70%);
+    }
+    .content_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .title_wrapper {
+            display: flex;
+            justify-content: flex-start;
+            /*font-size: 32px;*/
+            color: white;
+            text-align: start;
+            max-width: 720px;
+            width: 100%;
+            .title {
+                font-size: 44px;
+            }
+        }
+        .subtitle_wrapper {
+            display: flex;
+            justify-content: flex-start;
+            color: white;
+            text-align: start;
+            padding-top: 20px;
+            max-width: 720px;
+            width: 100%;
+            .subtitle {
+                font-size: 20px;
+                line-height: 30px;
+
+            }
+        }
+        .content_btn {
+            margin-top: 10px;
+            width: 200px;
+            height: 50px;
+        }
+    }
+    .stepper {
+        display: flex;
+        justify-content: space-between;
+        position:absolute;
+        bottom: 0px;
+        width: 100%;
+        /*background-color: transparent;*/
+    }
 }
 
-.title_wrapper {
-    display: flex;
-    justify-content: flex-start;
-    /*font-size: 32px;*/
-    color: white;
-    text-align: start;
-    max-width: 720px;
-    width: 100%;
-
-}
-
-.subtitle_wrapper {
-    display: flex;
-    justify-content: flex-start;
-    color: white;
-    text-align: start;
-    padding-top: 20px;
-    max-width: 720px;
-    width: 100%;
-}
-
-.content_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.title {
-    font-size: 44px;
-}
-
-.subtitle {
-    font-size: 20px;
-    line-height: 30px;
-
-}
-
-
-
-.img {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    left:0;
-    width: 100vw;
-    hight: 500px;
-    z-index: -1;
-    filter: brightness(70%);
-}
-
-.stepper {
-    display: flex;
-    justify-content: space-between;
-    position:absolute;
-    bottom: 0px;
-    width: 100%;
-    /*background-color: transparent;*/
-}
+@import "SliderComponent.media";
 

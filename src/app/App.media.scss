@@ -1,0 +1,12 @@
+@import "src/styles/index";
+
+@include widescreen-xxl {}
+@include desktop-xl {}
+@include laptop-lg {
+
+}
+@include tablet-md {}
+@include mobile-sm {}
+@include mobile-xs {}
+@include mobile-xxs {}
+

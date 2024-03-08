@@ -1,0 +1,218 @@
+@import "src/styles/index";
+
+@include widescreen-xxl {
+}
+
+@include desktop-xl {
+}
+
+@include laptop-lg {
+  .box {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    background-color: transparent;
+    .img {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width: 100vw;
+      hight: 500px;
+      z-index: -1;
+      filter: brightness(70%);
+    }
+    .content_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        max-width: 720px;
+        width: 100%;
+        .title {
+          font-size: 32px;
+        }
+      }
+      .subtitle_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        padding-top: 20px;
+        max-width: 720px;
+        width: 100%;
+        .subtitle {
+          font-size: 18px;
+          line-height: 30px;
+
+        }
+      }
+      .content_btn {
+        margin-top: 10px;
+        width: 150px;
+        height: 40px;
+        font-size: 10px;
+      }
+    }
+    .stepper {
+      display: flex;
+      justify-content: space-between;
+      position:absolute;
+      bottom: 0px;
+      width: 100%;
+      /*background-color: transparent;*/
+    }
+  }
+}
+
+@include tablet-md {
+}
+
+@include mobile-sm {
+  .box {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    background-color: transparent;
+    .img {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width: 100vw;
+      hight: 500px;
+      z-index: -1;
+      filter: brightness(70%);
+    }
+    .content_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        max-width: 720px;
+        width: 100%;
+        .title {
+          font-size: 28px;
+        }
+      }
+      .subtitle_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        padding-top: 20px;
+        max-width: 720px;
+        width: 100%;
+        .subtitle {
+          font-size: 16px;
+          line-height: 20px;
+
+        }
+      }
+      .content_btn {
+        margin-top: 10px;
+        width: 150px;
+        height: 40px;
+        font-size: 10px;
+      }
+    }
+    .stepper {
+      display: flex;
+      justify-content: space-between;
+      position:absolute;
+      bottom: 0px;
+      width: 100%;
+      /*background-color: transparent;*/
+    }
+  }
+}
+
+@include mobile-xs {
+}
+
+@include mobile-xxs {
+  .box {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    background-color: transparent;
+    .img {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width: 100vw;
+      hight: 500px;
+      z-index: -1;
+      filter: brightness(70%);
+    }
+    .content_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .title_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        max-width: 720px;
+        width: 100%;
+        .title {
+          font-size: 21px;
+        }
+      }
+      .subtitle_wrapper {
+        display: flex;
+        justify-content: flex-start;
+        color: white;
+        text-align: start;
+        padding-top: 5px;
+        max-width: 720px;
+        width: 100%;
+        .subtitle {
+          font-size: 12px;
+          line-height: 15px;
+
+        }
+      }
+      .content_btn {
+        margin-top: 10px;
+        width: 150px;
+        height: 40px;
+        font-size: 10px;
+      }
+    }
+    .stepper {
+      display: flex;
+      justify-content: space-between;
+      position:absolute;
+      bottom: 0px;
+      width: 100%;
+      /*background-color: transparent;*/
+    }
+  }
+}
+

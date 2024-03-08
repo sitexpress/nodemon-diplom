@@ -1,10 +1,4 @@
-//Модули
-
-@import "styles/index";
-
 //Обнуление
-
-
   * {
   padding: 0;
   margin: 0;
@@ -116,3 +110,5 @@ h6 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+//Модули
+@import "styles/index";

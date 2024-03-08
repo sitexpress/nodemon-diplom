@@ -15,6 +15,15 @@ export const AppBarComponent = () => {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar variant="regular" className={s.header_wrapper}>
+                        <IconButton
+                            className={s.hamburger}
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                         <div className={s.icon_logo}>
                             <div className={s.logo_wrapper}>
                                 <img src={logo} alt="Лого" />
@@ -47,11 +56,10 @@ export const AppBarComponent = () => {
 
                             <div className={s.header_btn}>
                                 <Button
+                                    className={s.btn}
                                     variant="contained"
                                     sx={{
                                         background: "#FF0000",
-                                        width: "170px",
-                                        height: "40px",
                                         color: "white",
                                         "&:hover": { background: "#42a5f5", color: "white" }
                                     }}
@@ -59,12 +67,11 @@ export const AppBarComponent = () => {
                                     Отправить заявку
                                 </Button>
                                 <Button
+                                    className={s.btn}
                                     variant="outlined"
                                     sx={{
                                         background: "white",
                                         textAlign: "start",
-                                        width: "170px",
-                                        height: "40px",
                                         color: "#42a5f5",
                                         "&:hover": { background: "#42a5f5", color: "white" }
                                     }}
