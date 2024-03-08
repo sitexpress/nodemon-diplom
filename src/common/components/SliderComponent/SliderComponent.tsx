@@ -170,7 +170,7 @@ export default function SwipeableTextMobileStepper() {
 
     return (
         <Box className={s.box}>
-            <CardMedia className={s.img} component="img" height="500" image={mainPageSliderImg} alt="" />
+            <CardMedia className={s.img} component="img" image={mainPageSliderImg} alt="" />
             <Container maxWidth="xl">
                 <AutoPlaySwipeableViews
                     axis={theme.direction === "rtl" ? "x-reverse" : "x"}
