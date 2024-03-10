@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import { ChangeEvent, useState } from "react";
 import { ModeType } from "../../../app/App";
 import logo from "../../../assets/icons/logo.svg";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface ModalType {
     open: boolean;
@@ -33,9 +34,16 @@ export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData,
                 aria-describedby="parent-modal-description"
             >
                 <Box className={s.box_wrapper}>
-                    {mode === "toApplyAppBar" ? (
+                    {mode === "toApplyApplication" ? (
                         <>
-                            <h2 id="parent-modal-title">Тендер</h2>
+                            <div className={s.closeBtn} onClick={handleClose}>
+                                <CloseIcon />
+                            </div>
+                            <div className={s.logo_wrapper}>
+                                <img src={logo} alt="Лого" />
+                                <span className={s.logo_name}>ендер</span>
+                            </div>
+
                             {/*<p id="parent-modal-description">Укажите название нового раздела меню:</p>*/}
                             <TextField
                                 sx={{ marginTop: "15px", width: "100%" }}
@@ -81,9 +89,54 @@ export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData,
                                 </Button>
                             </div>
                         </>
+                    ) : mode === "toApplyCall" ? (
+                        <>
+                            <div className={s.closeBtn} onClick={handleClose}>
+                                <CloseIcon />
+                            </div>
+                            <div className={s.logo_wrapper}>
+                                <img src={logo} alt="Лого" />
+                                <span className={s.logo_name}>ендер</span>
+                            </div>
+                            {/*<p id="parent-modal-description">Укажите название нового раздела меню:</p>*/}
+                            <TextField
+                                sx={{ marginTop: "15px", width: "100%" }}
+                                value={newMenuSectionValue}
+                                onChange={(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+                                    setNewMenuSectionValue(e.currentTarget.value)
+                                }
+                                id="outlined-basic"
+                                label="Имя"
+                                variant="outlined"
+                                multiline
+                            />
+                            <TextField
+                                sx={{ marginTop: "15px", width: "100%" }}
+                                value={newMenuSectionValue}
+                                onChange={(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+                                    setNewMenuSectionValue(e.currentTarget.value)
+                                }
+                                id="outlined-basic"
+                                label="Телефон"
+                                variant="outlined"
+                                multiline
+                            />
+                            <div className={s.btn_wrapper}>
+                                <Button
+                                    className={s.btn}
+                                    variant="contained"
+                                    color={"primary"}
+                                    onClick={() => setOpen(true)}
+                                >
+                                    Заказать звонок
+                                </Button>
+                            </div>
+                        </>
                     ) : (
                         <>
-                            {/*<h2 id="parent-modal-title">Тендер</h2>*/}
+                            <div className={s.closeBtn} onClick={handleClose}>
+                                <CloseIcon />
+                            </div>
                             <div className={s.logo_wrapper}>
                                 <img src={logo} alt="Лого" />
                                 <span className={s.logo_name}>ендер</span>

@@ -8,8 +8,10 @@ import { ResponsiveGrid } from "../common/components/GridComponent/GridComponent
 import { Footer } from "../common/components/Footer/Footer";
 import { CustomizedTimeline } from "../common/components/Timeline/Timeline";
 import { NestedModal } from "../common/components/Modal/Modal";
+import { HorizontalLinearStepper } from "../common/components/HorizontalStepper/HorizontalStepper";
+import { FlickingCarousel } from "../common/components/FlickingCarousel/FlickingCarousel";
 
-export type ModeType = "toApplyGrid1" | "toApplyAppBar" | "";
+export type ModeType = "toApplyGrid1" | "toApplyApplication" | "toApplyCall" | "";
 function App() {
     const [open, setOpen] = useState<boolean>(false);
     const [mode, setMode] = useState<ModeType>("");
@@ -17,7 +19,8 @@ function App() {
 
     return (
         <div className={s.app_container}>
-            <AppBarComponent open={open} setOpen={setOpen} />
+            <NestedModal open={open} setOpen={setOpen} mode={mode} btnData={btnData} />
+            <AppBarComponent setOpen={setOpen} setMode={setMode} />
             <SwipeableTextMobileStepper />
             <div className={s.grid1}>
                 <Container maxWidth="xl">
@@ -67,7 +70,31 @@ function App() {
                     </Box>
                 </Container>
             </div>
-            <NestedModal open={open} setOpen={setOpen} mode={mode} btnData={btnData} />
+
+            <div className={s.grid4}>
+                <Container maxWidth="xl">
+                    <Box className={s.box}>
+                        <div className={s.heading}>
+                            <h2>Примеры успешных проектов</h2>
+                            <h4>Обучили с нуля работе с тендерами</h4>
+                        </div>
+
+                        <HorizontalLinearStepper />
+                    </Box>
+                </Container>
+            </div>
+
+            <div className={s.grid5}>
+                <Container maxWidth="xl">
+                    <Box className={s.box}>
+                        <div className={s.heading}>
+                            <h2>Нам доверяют ведущие компании</h2>
+                            <h4>Наши клиенты - наша гордость.</h4>
+                        </div>
+                        <FlickingCarousel />
+                    </Box>
+                </Container>
+            </div>
 
             <div className={s.footer_wrapper}>
                 <Footer />

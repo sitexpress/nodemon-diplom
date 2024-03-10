@@ -9,12 +9,18 @@ import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
 import logo from "../../../assets/icons/logo.svg";
 import s from "./AppBarComponent.module.scss";
+import { ModeType } from "../../../app/App";
 
 type AppBarComponentType = {
-    open: boolean;
     setOpen: (value: boolean) => void;
+    setMode: (value: ModeType) => void;
 };
-export const AppBarComponent: React.FC<AppBarComponentType> = ({ open, setOpen }) => {
+export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMode }) => {
+    const onSetBtnHandler = (value: ModeType) => {
+        setOpen(true);
+        setMode(value);
+    };
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -68,7 +74,7 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ open, setOpen }
                                         color: "white",
                                         "&:hover": { background: "#42a5f5", color: "white" }
                                     }}
-                                    onClick={() => setOpen(true)}
+                                    onClick={() => onSetBtnHandler("toApplyApplication")}
                                 >
                                     Отправить заявку
                                 </Button>
@@ -81,6 +87,7 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ open, setOpen }
                                         color: "#42a5f5",
                                         "&:hover": { background: "#42a5f5", color: "white" }
                                     }}
+                                    onClick={() => onSetBtnHandler("toApplyCall")}
                                 >
                                     Заказать звонок
                                 </Button>

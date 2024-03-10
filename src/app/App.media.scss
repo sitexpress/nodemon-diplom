@@ -60,8 +60,37 @@
           height: 100%;
         }
       }
-
     }
+
+    .grid4 {
+      padding-top: 40px;
+      margin-bottom: 40px;
+      height: 100%;
+      background: #cfe8fc;
+      .box {
+        //background: #cfe8fc;
+        height: 100%;
+        margin-bottom: 40px;
+
+        .heading {
+          margin-bottom: 40px;
+
+          h2 {
+            font-size: 21px;
+          }
+          h4 {
+            font-size: 14px;
+            padding-top: 20px;
+          }
+        }
+
+        .grid_content {
+          height: 100%;
+        }
+      }
+    }
+
+
     .footer_wrapper {
       /*position: fixed;*/
       /*bottom: 0px;*/

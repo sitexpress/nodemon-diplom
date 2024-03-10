@@ -12,7 +12,7 @@
 }
 
 .box_wrapper {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,6 +26,14 @@
     boxShadow: 24;
     border-radius: 4px;
     padding: 30px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor:pointer;
 }
 
 .btn_wrapper {

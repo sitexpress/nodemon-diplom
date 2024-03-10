@@ -1,7 +1,7 @@
 @import "src/styles/index";
 .box {
     position: relative;
-    height: 500px;
+    height: 700px;
     display: flex;
     align-items: center;
     width: 100vw;
@@ -15,7 +15,7 @@
         top:0;
         left:0;
         width: 100vw;
-        hight: 500px;
+        hight: 100%;
         z-index: -1;
         filter: brightness(70%);
     }
