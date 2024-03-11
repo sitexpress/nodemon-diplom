@@ -76,7 +76,7 @@
     top: 75px;
     right: 0px;
     text-align: right;
-    height: 40px;
+    height: 110px;
     width: 100%;
     ul {
         display: flex;
@@ -87,6 +87,10 @@
         padding-top: 100px;
         li {
             cursor: pointer;
+            .appBar_burger_menu {
+                font-size: 16px;
+                color: white;
+            }
         }
     }
 

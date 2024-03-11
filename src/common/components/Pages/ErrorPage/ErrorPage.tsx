@@ -1,5 +1,5 @@
 import React from "react";
-import errorPageIcon from "../../../assets/icons/page-not-found1.svg";
+import errorPageIcon from "../../../../assets/icons/page-not-found1.svg";
 import s from "./ErrorPage.module.scss";
 
 export const ErrorPage = () => {

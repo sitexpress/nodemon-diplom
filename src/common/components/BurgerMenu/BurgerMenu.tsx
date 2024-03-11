@@ -3,6 +3,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import Button from "@mui/material/Button";
 import s from "./BurgerMenu.module.scss";
 import logo from "../../../assets/icons/logo.svg";
+import { NavLink } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import HomeIcon from "@mui/icons-material/Home";
 
 type CartAddedType = {
     openBurgerMenu: boolean;
@@ -25,14 +28,59 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
 
                     <div className={s.cart_menu_wrapper}>
                         <ul>
-                            <img src={logo} alt="Лого" />
-                            <li>Тендерное сопровождение</li>
-                            <li>Обучение тендерам</li>
-                            <li>Регистрация в ЕИС</li>
-                            <li>Услуги</li>
-                            <li>База знаний</li>
-                            <li>Компания</li>
-                            <li>Контакты</li>
+                            <li>
+                                <img src={logo} alt="Лого" />
+                            </li>
+                            <li>
+                                <NavLink to="/" className={s.appBar_burger_menu}>
+                                    <IconButton edge="start" color="inherit" aria-label="menu">
+                                        <HomeIcon />
+                                    </IconButton>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/tender-support" className={s.appBar_burger_menu}>
+                                    Тендерное сопровождение
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/courses" className={s.appBar_burger_menu}>
+                                    Обучение тендерам
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/registration-eis" className={s.appBar_burger_menu}>
+                                    Регистрация в ЕИС
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/services" className={s.appBar_burger_menu}>
+                                    Услуги
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/articles" className={s.appBar_burger_menu}>
+                                    База знаний
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/about" className={s.appBar_burger_menu}>
+                                    Компания
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/contacts" className={s.appBar_burger_menu}>
+                                    Контакты
+                                </NavLink>
+                            </li>
+
+                            {/*<li>Тендерное сопровождение</li>*/}
+                            {/*<li>Обучение тендерам</li>*/}
+                            {/*<li>Регистрация в ЕИС</li>*/}
+                            {/*<li>Услуги</li>*/}
+                            {/*<li>База знаний</li>*/}
+                            {/*<li>Компания</li>*/}
+                            {/*<li>Контакты</li>*/}
                         </ul>
                     </div>
                 </div>

@@ -11,7 +11,8 @@ import logo from "../../../assets/icons/logo.svg";
 import s from "./AppBarComponent.module.scss";
 import { ModeType } from "../../../app/App";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { NavLink } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 
 type AppBarComponentType = {
     setOpen: (value: boolean) => void;
@@ -103,20 +104,33 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMod
                         </div>
                     </Toolbar>
                     <div className={s.tbar}>
-                        <Toolbar
-                            variant="regular"
-                            className={s.appBar_menu_wrapper}
-                            // sx={(theme) => ({
-                            //     [theme.breakpoints.down("md")]: { display: "none" }
-                            // })}
-                        >
-                            <div className={s.appBar_menu}>Тендерное сопровождение</div>
-                            <div className={s.appBar_menu}>Обучение тендерам</div>
-                            <div className={s.appBar_menu}>Регистрация в ЕИС</div>
-                            <div className={s.appBar_menu}>Услуги</div>
-                            <div className={s.appBar_menu}>База знаний</div>
-                            <div className={s.appBar_menu}>Компания</div>
-                            <div className={s.appBar_menu}>Контакты</div>
+                        <Toolbar variant="regular" className={s.appBar_menu_wrapper}>
+                            <NavLink to="/" className={s.appBar_menu}>
+                                <IconButton edge="start" color="inherit" aria-label="menu">
+                                    <HomeIcon />
+                                </IconButton>
+                            </NavLink>
+                            <NavLink to="/tender-support" className={s.appBar_menu}>
+                                Тендерное сопровождение
+                            </NavLink>
+                            <NavLink to="/courses" className={s.appBar_menu}>
+                                Обучение тендерам
+                            </NavLink>
+                            <NavLink to="/registration-eis" className={s.appBar_menu}>
+                                Регистрация в ЕИС
+                            </NavLink>
+                            <NavLink to="/services" className={s.appBar_menu}>
+                                Услуги
+                            </NavLink>
+                            <NavLink to="/articles" className={s.appBar_menu}>
+                                База знаний
+                            </NavLink>
+                            <NavLink to="/about" className={s.appBar_menu}>
+                                Компания
+                            </NavLink>
+                            <NavLink to="/contacts" className={s.appBar_menu}>
+                                Контакты
+                            </NavLink>
                         </Toolbar>
                     </div>
                 </Container>
