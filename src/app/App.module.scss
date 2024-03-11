@@ -135,6 +135,48 @@
     margin-top: 40px;
   }
 
+  .btn_up {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    bottom: 30px;
+    right: 30px;
+    background: #cfe8fc;
+    border-radius: 50px;
+  }
+
+  .btn_chat_opened {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //height: 50px;
+    //width: 50px;
+    bottom: 90px;
+    right: 30px;
+    background: #cfe8fc;
+    border-radius: 50px;
+    transition: ease-in-out;
+  }
+
+  .btn_chat_closed {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //height: 50px;
+    //width: 50px;
+    bottom: 90px;
+    right: 30px;
+    background: #cfe8fc;
+    border-radius: 50px;
+    transition: ease-in-out;
+  }
+
 }
 
 @import "App.media";

@@ -10,12 +10,30 @@ import { CustomizedTimeline } from "../common/components/Timeline/Timeline";
 import { NestedModal } from "../common/components/Modal/Modal";
 import { HorizontalLinearStepper } from "../common/components/HorizontalStepper/HorizontalStepper";
 import { FlickingCarousel } from "../common/components/FlickingCarousel/FlickingCarousel";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import IconButton from "@mui/material/IconButton";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 
 export type ModeType = "toApplyGrid1" | "toApplyApplication" | "toApplyCall" | "";
+
 function App() {
     const [open, setOpen] = useState<boolean>(false);
     const [mode, setMode] = useState<ModeType>("");
     const [btnData, setBtnData] = useState<string>("");
+    const [chatOpen, setChatOpen] = useState<boolean>(false);
+
+    const handlerScrollUp = () => {
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            window.scrollBy(0, -50);
+            setTimeout(handlerScrollUp, 10);
+        }
+    };
+
+    const handlerChatOpenCloseUp = () => {
+        setChatOpen(!chatOpen);
+    };
 
     return (
         <div className={s.app_container}>
@@ -94,6 +112,30 @@ function App() {
                         <FlickingCarousel />
                     </Box>
                 </Container>
+            </div>
+
+            <div>
+                <IconButton size="large" className={s.btn_up} onClick={handlerScrollUp}>
+                    <ArrowCircleUpIcon fontSize="large" color={"primary"} />
+                </IconButton>
+
+                {chatOpen ? (
+                    <div className={s.btn_chat_opened}>
+                        <IconButton size="large">
+                            <WhatsAppIcon fontSize="large" color={"primary"} />
+                        </IconButton>
+                        <IconButton size="large">
+                            <TelegramIcon fontSize="large" color={"primary"} />
+                        </IconButton>
+                        <IconButton size="large" onClick={handlerChatOpenCloseUp}>
+                            <MapsUgcIcon fontSize="large" color={"primary"} />
+                        </IconButton>
+                    </div>
+                ) : (
+                    <IconButton size="large" className={s.btn_chat_closed} onClick={handlerChatOpenCloseUp}>
+                        <MapsUgcIcon fontSize="large" color={"primary"} />
+                    </IconButton>
+                )}
             </div>
 
             <div className={s.footer_wrapper}>

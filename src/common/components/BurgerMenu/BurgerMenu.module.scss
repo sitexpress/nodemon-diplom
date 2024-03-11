@@ -1,0 +1,121 @@
+@import "src/styles/index";
+
+.cart_closed_container {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 4s, opacity 4s ease;
+}
+
+.cart_opened_container {
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, 0.5);
+    z-index: 2;
+}
+
+.cart_opened_menu_wrapper {
+    position: absolute;
+    padding: 25px;
+    top:0;
+    left: 0;
+    min-height: 100%;
+    width: 300px;
+    background: $palette_primary_dark;
+    transition: all .23s;
+    z-index: 2;
+}
+
+.cart_closed_menu_wrapper {
+    visibility: visible;
+    position: absolute;
+    padding: 25px;
+    top:0;
+    right:0;
+    right: -300px;
+    min-height: 100%;
+    background: #4E4540;
+    transition: all .23s;
+    overflow-x: hidden;
+    z-index: 2;
+}
+
+.cart_positions_wrapper {
+    diplay: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    width: 100%;
+    top: 150px;
+}
+
+.cart_close_btn {
+    position: absolute;
+    color: white;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+
+}
+
+.cart_heading {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    color: white;
+}
+
+.cart_menu_wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 75px;
+    right: 0px;
+    text-align: right;
+    height: 40px;
+    width: 100%;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        padding-top: 100px;
+        li {
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+
+.sum_price {
+    /*display: block;*/
+    text-align: end;
+    padding: 10px 10px 10px 10px;
+    /*margin-bottom: 10px;*/
+    font-size: 21px;
+}
+
+.cart_order_btn_wrapper {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.cart_order_btn {
+    background: #F26C51;
+    color:white;
+    border: 1px solid #F26C51;
+}
+
+.cart_order_btn:hover {
+    background: #46bcc7;
+    color:white;
+    border: 1px solid #46bcc7;
+}
+

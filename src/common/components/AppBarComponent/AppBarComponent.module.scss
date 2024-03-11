@@ -1,84 +1,106 @@
 @import "src/styles/index";
+    .header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1490px;
+        padding-top: 5px;
+        margin-bottom: 15px;
+        .hamburger_wrapper {
+            display: none;
+            .hamburger {
+                display: none;
+            }
+        }
 
-.header_wrapper {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1490px;
-    padding-top: 5px;
-    margin-bottom: 15px;
-    .hamburger {
-        display: none;
-    }
-    .icon_logo {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 21px;
-        & img {
-            height: auto;
-            width: 60px;
-            fill: red;
-        }
-        .logo_wrapper {
+        .icon_logo {
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 21px;
+            & img {
+                height: auto;
+                width: 60px;
+                fill: red;
+            }
+            .logo_wrapper {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .moto {
+                text-align: left;
+                font-size: 14px;
+                width: 350px;
+                //padding-left: 10px;
+            }
+        }
+        .header_info {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
             align-items: center;
-        }
-        .moto {
-            text-align: left;
-            font-size: 14px;
-            width: 350px;
-            //padding-left: 10px;
-        }
-    }
-    .header_info {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: 1000px;
-        gap: 20px;
-        .contacts{
-            display: flex;
+            width: 1000px;
             gap: 20px;
-            .phone_one {
+            .contacts{
                 display: flex;
-                flex-direction: column;
-                font-size: 14px;
-                line-height: 20px;
-                .link {
-                    text-decoration: none;
-                    font-size: 16px;
+                gap: 20px;
+                .phone_one {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 14px;
                     line-height: 20px;
+                    .link {
+                        text-decoration: none;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
                 }
-            }
-            .phone_two {
-                display: flex;
-                flex-direction: column;
-                font-size: 14px;
-                line-height: 20px;
-                .link {
-                    text-decoration: none;
-                    font-size: 16px;
+                .phone_two {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 14px;
                     line-height: 20px;
+                    .link {
+                        text-decoration: none;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
                 }
             }
         }
-    }
-    .header_btn {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 360px;
-        gap: 20px;
-        .btn {
-            width: 170px;
-            height: 40px;
+        .header_btn {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 360px;
+            gap: 20px;
+            .btn {
+                width: 170px;
+                height: 40px;
+            }
         }
     }
-}
+    .tbar {
+        display: block;
+        .appBar_menu_wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1490px;
+            padding: 0px 24px 0px 24px;
+            .appBar_menu {
+                font-size: 16px;
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+
 
 @import "AppBarComponent.media";
 

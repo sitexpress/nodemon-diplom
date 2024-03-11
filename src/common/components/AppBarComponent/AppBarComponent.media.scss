@@ -8,8 +8,12 @@
     max-width: 1490px;
     padding-top: 5px;
     margin-bottom: 15px;
-    .hamburger {
+    padding-left: 0px;
+    .hamburger_wrapper {
       display: none;
+      .hamburger {
+        display: none;
+      }
     }
     .icon_logo {
       display: flex;
@@ -83,6 +87,19 @@
       }
     }
   }
+  .appBar_menu_wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1490px;
+    .appBar_menu {
+      font-size: 16px;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+  }
 }
 @include laptop-lg {
   .header_wrapper {
@@ -91,8 +108,11 @@
     max-width: 1490px;
     padding-top: 5px;
     //margin-bottom: 15px;
-    .hamburger {
+    .hamburger_wrapper {
       display: none;
+      .hamburger {
+        display: none;
+      }
     }
     .icon_logo {
       display: flex;
@@ -166,6 +186,23 @@
       }
     }
   }
+  .tbar {
+    display: block;
+    .appBar_menu_wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1490px;
+      padding: 0;
+      .appBar_menu {
+        font-size: 12px;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
 }
 @include tablet-md {
   .header_wrapper {
@@ -174,8 +211,11 @@
     max-width: 1490px;
     padding-top: 5px;
     //margin-bottom: 15px;
-    .hamburger {
-      display: none;
+    .hamburger_wrapper {
+      display: block;
+      .hamburger {
+        display: block;
+      }
     }
     .icon_logo {
       display: flex;
@@ -249,6 +289,18 @@
       }
     }
   }
+  .tbar {
+    display: none;
+    .appBar_menu_wrapper {
+      display: none;
+
+      .appBar_menu {
+        display: none;
+
+      }
+
+    }
+  }
 }
 @include mobile-sm {
   .header_wrapper {
@@ -257,8 +309,11 @@
     max-width: 1490px;
     padding-top: 5px;
     //margin-bottom: 15px;
-    .hamburger {
-      display: none;
+    .hamburger_wrapper {
+      display: block;
+      .hamburger {
+        display: block;
+      }
     }
     .icon_logo {
       display: flex;
@@ -330,6 +385,19 @@
         font-size: 10px;
 
       }
+    }
+  }
+
+  .tbar {
+    display: none;
+    .appBar_menu_wrapper {
+      display: none;
+
+      .appBar_menu {
+        display: none;
+
+      }
+
     }
   }
 }
