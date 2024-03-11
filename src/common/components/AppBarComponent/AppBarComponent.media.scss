@@ -383,6 +383,9 @@
         width: 140px;
         height: 30px;
         font-size: 10px;
+        &:last-child {
+          display: none;
+        }
 
       }
     }

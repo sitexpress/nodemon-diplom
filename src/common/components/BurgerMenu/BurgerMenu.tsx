@@ -32,44 +32,76 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                 <img src={logo} alt="Лого" />
                             </li>
                             <li>
-                                <NavLink to="/" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     <IconButton edge="start" color="inherit" aria-label="menu">
                                         <HomeIcon />
                                     </IconButton>
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/tender-support" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/tender-support"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Тендерное сопровождение
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/courses" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/courses"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Обучение тендерам
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/registration-eis" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/registration-eis"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Регистрация в ЕИС
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/services" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/services"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Услуги
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/articles" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/articles"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     База знаний
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/about" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/about"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Компания
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/contacts" className={s.appBar_burger_menu}>
+                                <NavLink
+                                    to="/contacts"
+                                    className={s.appBar_burger_menu}
+                                    onClick={() => setOpenBurgerMenu(false)}
+                                >
                                     Контакты
                                 </NavLink>
                             </li>
