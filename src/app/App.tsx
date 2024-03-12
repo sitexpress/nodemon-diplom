@@ -128,12 +128,12 @@ function App() {
                             <TelegramIcon fontSize="large" color={"primary"} />
                         </IconButton>
                         <IconButton size="large" onClick={handlerChatOpenCloseUp}>
-                            <MapsUgcIcon fontSize="large" color={"primary"} />
+                            <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_opened} />
                         </IconButton>
                     </div>
                 ) : (
                     <IconButton size="large" className={s.btn_chat_closed} onClick={handlerChatOpenCloseUp}>
-                        <MapsUgcIcon fontSize="large" color={"primary"} />
+                        <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_closed} />
                     </IconButton>
                 )}
             </div>

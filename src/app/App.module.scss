@@ -160,6 +160,14 @@
     right: 30px;
     background: #cfe8fc;
     border-radius: 50px;
+    .message_icon_opened {
+      transition: transform 1s ease-out;
+      transform: rotate(0.37turn);
+    }
+    .message_icon_closed {
+        transition: transform 1s ease-out;
+        transform: rotate(0turn);
+    }
   }
 
   .btn_chat_closed {

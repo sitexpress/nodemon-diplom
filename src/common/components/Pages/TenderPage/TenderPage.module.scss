@@ -1,0 +1,24 @@
+  .grid {
+    padding-top: 200px;
+    padding-bottom: 40px;
+    height: 100%;
+    background: #cfe8fc;
+    .box {
+      padding-top: 100px;
+      height: 400px;
+    .heading {
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+    .subtitle {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 16px;
+      max-width: 1000px;
+      p {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+}
