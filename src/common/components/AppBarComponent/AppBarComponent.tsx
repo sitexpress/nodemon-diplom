@@ -9,10 +9,10 @@ import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
 import logo from "../../../assets/icons/logo.svg";
 import s from "./AppBarComponent.module.scss";
-import { ModeType } from "../../../app/App";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { ModeType } from "../../../store/tenderDataSlice";
 
 type AppBarComponentType = {
     setOpen: (value: boolean) => void;

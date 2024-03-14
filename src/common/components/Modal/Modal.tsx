@@ -2,33 +2,45 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 import s from "./Modal.module.css";
 import TextField from "@mui/material/TextField";
 import { ChangeEvent, useState } from "react";
-import { ModeType } from "../../../app/App";
 import logo from "../../../assets/icons/logo.svg";
 import CloseIcon from "@mui/icons-material/Close";
+import { ModeType, setOpenClose } from "../../../store/tenderDataSlice";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
 
 interface ModalType {
-    open: boolean;
-    setOpen: (value: boolean) => void;
+    isOpen: boolean;
     mode: ModeType;
     activeMenuSection?: string;
     btnData: string;
 }
 
-export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData, ...other }) => {
+export const NestedModal: React.FC<ModalType> = ({ isOpen, mode, btnData, ...other }) => {
     const [newMenuSectionValue, setNewMenuSectionValue] = useState("");
+    const dispatch = useAppDispatch();
+
+    const handleOpen = () => {
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
+    };
     const handleClose = () => {
-        setOpen(false);
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
     };
 
     return (
         <div>
             <Modal
-                open={open}
+                open={isOpen}
                 onClose={handleClose}
                 aria-labelledby="parent-modal-title"
                 aria-describedby="parent-modal-description"
@@ -79,12 +91,7 @@ export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData,
                                 multiline
                             />
                             <div className={s.btn_wrapper}>
-                                <Button
-                                    className={s.btn}
-                                    variant="contained"
-                                    color={"primary"}
-                                    onClick={() => setOpen(true)}
-                                >
+                                <Button className={s.btn} variant="contained" color={"primary"} onClick={handleOpen}>
                                     Отправить заявку на услуги
                                 </Button>
                             </div>
@@ -122,12 +129,7 @@ export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData,
                                 multiline
                             />
                             <div className={s.btn_wrapper}>
-                                <Button
-                                    className={s.btn}
-                                    variant="contained"
-                                    color={"primary"}
-                                    onClick={() => setOpen(true)}
-                                >
+                                <Button className={s.btn} variant="contained" color={"primary"} onClick={handleOpen}>
                                     Заказать звонок
                                 </Button>
                             </div>
@@ -176,12 +178,7 @@ export const NestedModal: React.FC<ModalType> = ({ open, setOpen, mode, btnData,
                                 multiline
                             />
                             <div className={s.btn_wrapper}>
-                                <Button
-                                    className={s.btn}
-                                    variant="contained"
-                                    color={"primary"}
-                                    onClick={() => setOpen(true)}
-                                >
+                                <Button className={s.btn} variant="contained" color={"primary"} onClick={handleOpen}>
                                     {btnData}
                                 </Button>
                             </div>

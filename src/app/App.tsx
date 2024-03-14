@@ -15,30 +15,28 @@ import IconButton from "@mui/material/IconButton";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import MapsUgcIcon from "@mui/icons-material/MapsUgc";
-
-export type ModeType = "toApplyGrid1" | "toApplyApplication" | "toApplyCall" | "";
+import { ModeType, setChatOpenClose, setOpenClose } from "../store/tenderDataSlice";
+import { useAppDispatch, useAppSelector } from "../store/store";
+import PopUpBtn from "../common/components/PopUpBtn/PopUpBtn";
 
 function App() {
-    const [open, setOpen] = useState<boolean>(false);
     const [mode, setMode] = useState<ModeType>("");
     const [btnData, setBtnData] = useState<string>("");
-    const [chatOpen, setChatOpen] = useState<boolean>(false);
+    const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const dispatch = useAppDispatch();
 
-    const handlerScrollUp = () => {
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            window.scrollBy(0, -50);
-            setTimeout(handlerScrollUp, 10);
-        }
-    };
-
-    const handlerChatOpenCloseUp = () => {
-        setChatOpen(!chatOpen);
+    const handleСlose = () => {
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
     };
 
     return (
         <div className={s.app_container}>
-            <NestedModal open={open} setOpen={setOpen} mode={mode} btnData={btnData} />
-            <AppBarComponent setOpen={setOpen} setMode={setMode} />
+            <NestedModal isOpen={isOpen} mode={mode} btnData={btnData} />
+            <AppBarComponent setOpen={handleСlose} setMode={setMode} />
             <SwipeableTextMobileStepper />
             <div className={s.grid1}>
                 <Container maxWidth="xl">
@@ -49,8 +47,8 @@ function App() {
                         <div className={s.grid_content}>
                             <ResponsiveGrid
                                 grid={"grid1"}
-                                open={open}
-                                setOpen={setOpen}
+                                isOpen={isOpen}
+                                setOpen={handleСlose}
                                 setMode={setMode}
                                 setBtnData={setBtnData}
                             />
@@ -79,8 +77,8 @@ function App() {
                         <div className={s.grid_content}>
                             <ResponsiveGrid
                                 grid={"grid3"}
-                                open={open}
-                                setOpen={setOpen}
+                                isOpen={isOpen}
+                                setOpen={handleСlose}
                                 setMode={setMode}
                                 setBtnData={setBtnData}
                             />
@@ -114,33 +112,10 @@ function App() {
                 </Container>
             </div>
 
-            <div>
-                <IconButton size="large" className={s.btn_up} onClick={handlerScrollUp}>
-                    <ArrowCircleUpIcon fontSize="large" color={"primary"} />
-                </IconButton>
-
-                {chatOpen ? (
-                    <div className={s.btn_chat_opened}>
-                        <IconButton size="large">
-                            <WhatsAppIcon fontSize="large" color={"primary"} />
-                        </IconButton>
-                        <IconButton size="large">
-                            <TelegramIcon fontSize="large" color={"primary"} />
-                        </IconButton>
-                        <IconButton size="large" onClick={handlerChatOpenCloseUp}>
-                            <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_opened} />
-                        </IconButton>
-                    </div>
-                ) : (
-                    <IconButton size="large" className={s.btn_chat_closed} onClick={handlerChatOpenCloseUp}>
-                        <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_closed} />
-                    </IconButton>
-                )}
-            </div>
-
             <div className={s.footer_wrapper}>
                 <Footer />
             </div>
+            <PopUpBtn />
         </div>
     );
 }

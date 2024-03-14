@@ -12,6 +12,8 @@ import "@fontsource/roboto/700.css";
 
 import "./index.scss";
 import { TenderPage } from "./common/components/Pages/TenderPage/TenderPage";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const router = createBrowserRouter([
     {
@@ -21,36 +23,51 @@ const router = createBrowserRouter([
     },
     {
         path: "/tender-support",
-        element: <TenderPage heading={"Тендерное сопровождение под ключ без риска или гарантии победы в тендерах"} />
+        element: (
+            <TenderPage
+                heading={"Тендерное сопровождение под ключ без риска или гарантии победы в тендерах"}
+                btnText={"КОНСУЛЬТАЦИЯ ПО СОПРОВОЖДЕНИЮ ТЕНДЕРОВ"}
+            />
+        )
     },
     {
         path: "/courses",
-        element: <TenderPage heading={"Обучение тендерам и госзакупкам"} />
+        element: (
+            <TenderPage heading={"Обучение тендерам и госзакупкам"} btnText={"ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ ПО ОБУЧЕНИЮ"} />
+        )
     },
     {
         path: "/registration-eis",
-        element: <TenderPage heading={"Регистрация в ЕИС: пошаговая инструкция"} />
+        element: (
+            <TenderPage heading={"Регистрация в ЕИС: пошаговая инструкция"} btnText={"ЗАКАЗАТЬ РЕГИСТРАЦИЮ В ЕИС"} />
+        )
     },
     {
         path: "/services",
-        element: <TenderPage heading={"Услуги"} />
+        element: <TenderPage heading={"Услуги"} btnText={""} />
     },
     {
         path: "/articles",
-        element: <TenderPage heading={"Участие в электронном аукционе: пошаговая инструкция"} />
+        element: (
+            <TenderPage heading={"Участие в электронном аукционе: пошаговая инструкция"} btnText={"Читать статью"} />
+        )
     },
     {
         path: "/about",
-        element: <TenderPage heading={"О компании"} />
+        element: <TenderPage heading={"О компании"} btnText={""} />
     },
     {
         path: "/contacts",
-        element: <TenderPage heading={"Контакты"} />
+        element: <TenderPage heading={"Контакты"} btnText={""} />
     }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-root.render(<RouterProvider router={router} />);
+root.render(
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
