@@ -1,18 +1,17 @@
 import React from "react";
-import s from "../Page/Page.module.scss";
 import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import s from "../Page/Page.module.scss";
 
-export const TenderPage = () => {
+export const CoursesPage = () => {
     return (
         <Container maxWidth="xl">
             <Box sx={{ flexGrow: 1 }} className={s.box}>
                 <div className={s.heading}>
-                    <h3>TenderPage</h3>
+                    <h3>Courses</h3>
                 </div>
                 <div className={s.subtitle}>
-                    <p>TenderPage TenderPage TenderPage</p>
+                    <p>Courses Courses Courses</p>
                 </div>
             </Box>
         </Container>

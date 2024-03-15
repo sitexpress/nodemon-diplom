@@ -38,7 +38,7 @@ function App() {
             <NestedModal isOpen={isOpen} mode={mode} btnData={btnData} />
             <AppBarComponent setOpen={handleСlose} setMode={setMode} />
             <SwipeableTextMobileStepper />
-            <div className={s.grid1}>
+            <section className={s.grid1}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>
                         <div className={s.heading}>
@@ -55,9 +55,9 @@ function App() {
                         </div>
                     </Box>
                 </Container>
-            </div>
+            </section>
 
-            <div className={s.grid2}>
+            <section className={s.grid2}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>
                         <div className={s.heading}>
@@ -66,9 +66,9 @@ function App() {
                         <CustomizedTimeline />
                     </Box>
                 </Container>
-            </div>
+            </section>
 
-            <div className={s.grid3}>
+            <section className={s.grid3}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>
                         <div className={s.heading}>
@@ -85,9 +85,9 @@ function App() {
                         </div>
                     </Box>
                 </Container>
-            </div>
+            </section>
 
-            <div className={s.grid4}>
+            <section className={s.grid4}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>
                         <div className={s.heading}>
@@ -98,7 +98,7 @@ function App() {
                         <HorizontalLinearStepper />
                     </Box>
                 </Container>
-            </div>
+            </section>
 
             <div className={s.grid5}>
                 <Container maxWidth="xl">

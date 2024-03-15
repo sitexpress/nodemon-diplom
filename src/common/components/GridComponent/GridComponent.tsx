@@ -167,12 +167,6 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid, isOpen, setOpen, setM
                                     <Button
                                         className={s.btn3}
                                         variant="outlined"
-                                        // sx={{
-                                        //     background: "white",
-                                        //     mt: 3,
-                                        //     color: "#42a5f5",
-                                        //     "&:hover": { background: "#42a5f5", color: "white" }
-                                        // }}
                                         onClick={() => onApplyHandler(card.btn3)}
                                     >
                                         {card.btn3}

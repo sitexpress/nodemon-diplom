@@ -12,11 +12,10 @@ type CartAddedType = {
 };
 
 export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBurgerMenu, ...other }) => {
-    const location = useLocation();
-    const pathName = location.pathname;
+    const { pathname } = useLocation();
     const mainMenuBurger = {
         home: () => {
-            return pathName === "/" ? (
+            return pathname === "/" ? (
                 <IconButton edge="start" color="inherit" aria-label="menu" className={s.appBar_burger_menu_active}>
                     <HomeIcon />
                 </IconButton>
@@ -27,37 +26,37 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
             );
         },
         tenderSupport: () => {
-            return pathName === "/tender-support" ? (
+            return pathname === "/tender-support" ? (
                 <span className={s.active}>Тендерное сопровождение</span>
             ) : (
                 <span>Тендерное сопровождение</span>
             );
         },
         courses: () => {
-            return pathName === "/courses" ? (
+            return pathname === "/courses" ? (
                 <span className={s.active}>Обучение тендерам</span>
             ) : (
                 <span>Обучение тендерам</span>
             );
         },
         registrationEis: () => {
-            return pathName === "/registration-eis" ? (
+            return pathname === "/registration-eis" ? (
                 <span className={s.active}>Регистрация в ЕИС</span>
             ) : (
                 <span>Регистрация в ЕИС</span>
             );
         },
         services: () => {
-            return pathName === "/services" ? <span className={s.active}>Услуги</span> : <span>Услуги</span>;
+            return pathname === "/services" ? <span className={s.active}>Услуги</span> : <span>Услуги</span>;
         },
         articles: () => {
-            return pathName === "/articles" ? <span className={s.active}>База знаний</span> : <span>База знаний</span>;
+            return pathname === "/articles" ? <span className={s.active}>База знаний</span> : <span>База знаний</span>;
         },
         about: () => {
-            return pathName === "/about" ? <span className={s.active}>Компания</span> : <span>Компания</span>;
+            return pathname === "/about" ? <span className={s.active}>Компания</span> : <span>Компания</span>;
         },
         contacts: () => {
-            return pathName === "/contacts" ? <span className={s.active}>Контакты</span> : <span>Контакты</span>;
+            return pathname === "/contacts" ? <span className={s.active}>Контакты</span> : <span>Контакты</span>;
         }
     };
     return (
@@ -73,20 +72,13 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                     {/*<h2>Корзина&nbsp;&nbsp;</h2>*/}
                     <CloseIcon onClick={() => setOpenBurgerMenu(false)} className={s.cart_close_btn} />
 
-                    <div className={s.cart_menu_wrapper}>
+                    <nav className={s.cart_menu_wrapper}>
                         <ul>
                             <li>
                                 <img src={logo} alt="Лого" />
                             </li>
                             <li>
-                                <NavLink
-                                    to="/"
-                                    // className={s.appBar_burger_menu}
-                                    onClick={() => setOpenBurgerMenu(false)}
-                                >
-                                    {/*<IconButton edge="start" color="inherit" aria-label="menu">*/}
-                                    {/*    <HomeIcon />*/}
-                                    {/*</IconButton>*/}
+                                <NavLink to="/" onClick={() => setOpenBurgerMenu(false)}>
                                     {mainMenuBurger.home()}
                                 </NavLink>
                             </li>
@@ -162,7 +154,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                             {/*<li>Компания</li>*/}
                             {/*<li>Контакты</li>*/}
                         </ul>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </div>

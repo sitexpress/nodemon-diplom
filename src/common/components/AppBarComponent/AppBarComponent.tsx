@@ -19,8 +19,8 @@ type AppBarComponentType = {
 };
 export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMode }) => {
     const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
-    const location = useLocation();
-    const pathName = location.pathname;
+    const { pathname } = useLocation();
+    // const pathName = location.pathname;
 
     const onSetBtnHandler = (value: ModeType) => {
         setOpen(true);
@@ -29,7 +29,7 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMod
 
     const mainMenu = {
         home: () => {
-            return pathName === "/" ? (
+            return pathname === "/" ? (
                 <IconButton edge="start" aria-label="menu" className={s.icon}>
                     <HomeIcon />
                 </IconButton>
@@ -40,37 +40,37 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMod
             );
         },
         tenderSupport: () => {
-            return pathName === "/tender-support" ? (
+            return pathname === "/tender-support" ? (
                 <span className={s.active}>Тендерное сопровождение</span>
             ) : (
                 <span>Тендерное сопровождение</span>
             );
         },
         courses: () => {
-            return pathName === "/courses" ? (
+            return pathname === "/courses" ? (
                 <span className={s.active}>Обучение тендерам</span>
             ) : (
                 <span>Обучение тендерам</span>
             );
         },
         registrationEis: () => {
-            return pathName === "/registration-eis" ? (
+            return pathname === "/registration-eis" ? (
                 <span className={s.active}>Регистрация в ЕИС</span>
             ) : (
                 <span>Регистрация в ЕИС</span>
             );
         },
         services: () => {
-            return pathName === "/services" ? <span className={s.active}>Услуги</span> : <span>Услуги</span>;
+            return pathname === "/services" ? <span className={s.active}>Услуги</span> : <span>Услуги</span>;
         },
         articles: () => {
-            return pathName === "/articles" ? <span className={s.active}>База знаний</span> : <span>База знаний</span>;
+            return pathname === "/articles" ? <span className={s.active}>База знаний</span> : <span>База знаний</span>;
         },
         about: () => {
-            return pathName === "/about" ? <span className={s.active}>Компания</span> : <span>Компания</span>;
+            return pathname === "/about" ? <span className={s.active}>Компания</span> : <span>Компания</span>;
         },
         contacts: () => {
-            return pathName === "/contacts" ? <span className={s.active}>Контакты</span> : <span>Контакты</span>;
+            return pathname === "/contacts" ? <span className={s.active}>Контакты</span> : <span>Контакты</span>;
         }
     };
 
@@ -151,7 +151,7 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMod
                             </div>
                         </div>
                     </Toolbar>
-                    <div className={s.tbar}>
+                    <nav className={s.tbar}>
                         <Toolbar variant="regular" className={s.appBar_menu_wrapper}>
                             <NavLink to="/" className={s.appBar_menu}>
                                 {mainMenu.home()}
@@ -178,7 +178,7 @@ export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMod
                                 {mainMenu.contacts()}
                             </NavLink>
                         </Toolbar>
-                    </div>
+                    </nav>
                 </Container>
             </AppBar>
         </Box>
