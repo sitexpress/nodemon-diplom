@@ -9,6 +9,7 @@ import { ModeType, setOpenClose } from "../../../../store/tenderDataSlice";
 import { useAppDispatch, useAppSelector } from "../../../../store/store";
 import { NestedModal } from "../../Modal/Modal";
 import PopUpBtn from "../../PopUpBtn/PopUpBtn";
+import { useLocation } from "react-router-dom";
 
 type TenderPageType = {
     heading: string;

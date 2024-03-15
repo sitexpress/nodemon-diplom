@@ -90,6 +90,15 @@
             .appBar_burger_menu {
                 font-size: 16px;
                 color: white;
+                .active {
+                    text-decoration: underline;
+                    color: $palette_error_light;
+                }
+            }
+            .appBar_burger_menu_active {
+                font-size: 16px;
+                color: white;
+                filter: invert(67%) sepia(50%) saturate(7146%) hue-rotate(330deg) brightness(98%) contrast(91%);
             }
         }
     }

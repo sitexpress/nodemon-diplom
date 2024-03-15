@@ -1,9 +1,8 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import Button from "@mui/material/Button";
 import s from "./BurgerMenu.module.scss";
 import logo from "../../../assets/icons/logo.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
 
@@ -13,6 +12,54 @@ type CartAddedType = {
 };
 
 export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBurgerMenu, ...other }) => {
+    const location = useLocation();
+    const pathName = location.pathname;
+    const mainMenuBurger = {
+        home: () => {
+            return pathName === "/" ? (
+                <IconButton edge="start" color="inherit" aria-label="menu" className={s.appBar_burger_menu_active}>
+                    <HomeIcon />
+                </IconButton>
+            ) : (
+                <IconButton edge="start" color="inherit" aria-label="menu" className={s.appBar_burger_menu}>
+                    <HomeIcon />
+                </IconButton>
+            );
+        },
+        tenderSupport: () => {
+            return pathName === "/tender-support" ? (
+                <span className={s.active}>Тендерное сопровождение</span>
+            ) : (
+                <span>Тендерное сопровождение</span>
+            );
+        },
+        courses: () => {
+            return pathName === "/courses" ? (
+                <span className={s.active}>Обучение тендерам</span>
+            ) : (
+                <span>Обучение тендерам</span>
+            );
+        },
+        registrationEis: () => {
+            return pathName === "/registration-eis" ? (
+                <span className={s.active}>Регистрация в ЕИС</span>
+            ) : (
+                <span>Регистрация в ЕИС</span>
+            );
+        },
+        services: () => {
+            return pathName === "/services" ? <span className={s.active}>Услуги</span> : <span>Услуги</span>;
+        },
+        articles: () => {
+            return pathName === "/articles" ? <span className={s.active}>База знаний</span> : <span>База знаний</span>;
+        },
+        about: () => {
+            return pathName === "/about" ? <span className={s.active}>Компания</span> : <span>Компания</span>;
+        },
+        contacts: () => {
+            return pathName === "/contacts" ? <span className={s.active}>Контакты</span> : <span>Контакты</span>;
+        }
+    };
     return (
         <div
             className={openBurgerMenu ? s.cart_opened_container : s.cart_closed_container}
@@ -34,12 +81,13 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                             <li>
                                 <NavLink
                                     to="/"
-                                    className={s.appBar_burger_menu}
+                                    // className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    <IconButton edge="start" color="inherit" aria-label="menu">
-                                        <HomeIcon />
-                                    </IconButton>
+                                    {/*<IconButton edge="start" color="inherit" aria-label="menu">*/}
+                                    {/*    <HomeIcon />*/}
+                                    {/*</IconButton>*/}
+                                    {mainMenuBurger.home()}
                                 </NavLink>
                             </li>
                             <li>
@@ -48,7 +96,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Тендерное сопровождение
+                                    {mainMenuBurger.tenderSupport()}
                                 </NavLink>
                             </li>
                             <li>
@@ -57,7 +105,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Обучение тендерам
+                                    {mainMenuBurger.courses()}
                                 </NavLink>
                             </li>
                             <li>
@@ -66,7 +114,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Регистрация в ЕИС
+                                    {mainMenuBurger.registrationEis()}
                                 </NavLink>
                             </li>
                             <li>
@@ -75,7 +123,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Услуги
+                                    {mainMenuBurger.services()}
                                 </NavLink>
                             </li>
                             <li>
@@ -84,7 +132,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    База знаний
+                                    {mainMenuBurger.articles()}
                                 </NavLink>
                             </li>
                             <li>
@@ -93,7 +141,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Компания
+                                    {mainMenuBurger.about()}
                                 </NavLink>
                             </li>
                             <li>
@@ -102,7 +150,7 @@ export const BurgerMenu: React.FC<CartAddedType> = ({ openBurgerMenu, setOpenBur
                                     className={s.appBar_burger_menu}
                                     onClick={() => setOpenBurgerMenu(false)}
                                 >
-                                    Контакты
+                                    {mainMenuBurger.contacts()}
                                 </NavLink>
                             </li>
 

@@ -28,9 +28,11 @@ const PopUpBtn = () => {
 
     return (
         <div>
-            <IconButton size="large" className={s.btn_up} onClick={handlerScrollUp}>
-                <ArrowCircleUpIcon fontSize="large" color={"primary"} />
-            </IconButton>
+            <div className={s.btn_up}>
+                <IconButton size="large" onClick={handlerScrollUp}>
+                    <ArrowCircleUpIcon fontSize="large" color={"primary"} />
+                </IconButton>
+            </div>
 
             {isChatOpen ? (
                 <div className={s.btn_chat_opened}>
@@ -45,9 +47,11 @@ const PopUpBtn = () => {
                     </IconButton>
                 </div>
             ) : (
-                <IconButton size="large" className={s.btn_chat_closed} onClick={handlerChatOpenCloseUp}>
-                    <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_closed} />
-                </IconButton>
+                <div className={s.btn_chat_closed}>
+                    <IconButton size="large" onClick={handlerChatOpenCloseUp}>
+                        <MapsUgcIcon fontSize="large" color={"primary"} className={s.message_icon_closed} />
+                    </IconButton>
+                </div>
             )}
         </div>
     );
