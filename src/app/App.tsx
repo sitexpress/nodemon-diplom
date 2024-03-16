@@ -100,7 +100,7 @@ function App() {
                 </Container>
             </section>
 
-            <div className={s.grid5}>
+            <section className={s.grid5}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>
                         <div className={s.heading}>
@@ -110,11 +110,11 @@ function App() {
                         <FlickingCarousel />
                     </Box>
                 </Container>
-            </div>
+            </section>
 
-            <div className={s.footer_wrapper}>
+            <section className={s.footer_wrapper}>
                 <Footer />
-            </div>
+            </section>
             <PopUpBtn />
         </div>
     );

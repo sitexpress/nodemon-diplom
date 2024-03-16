@@ -1,0 +1,39 @@
+@import "src/styles/index";
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  height: 400px;
+  .heading {
+    text-align: center;
+  }
+  .subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    gap: 40px;
+    .icon_group {
+      width: 150px;
+      height: auto;
+    }
+    .article {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding-top: 40px;
+
+      p {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 auto;
+        text-align: start;
+
+      }
+    }
+
+  }
+}
+

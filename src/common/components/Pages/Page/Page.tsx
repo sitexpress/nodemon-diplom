@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AppBarComponent } from "../../AppBarComponent/AppBarComponent";
-
 import Box from "@mui/material/Box";
 import { Container } from "@mui/material";
 import s from "./Page.module.scss";
@@ -17,8 +16,7 @@ import { ServicesPage } from "../ServicesPage/ServicesPage";
 import { ArticlesPage } from "../ArticlesPage/ArticlesPage";
 import { AboutPage } from "../AboutPage/AboutPage";
 import { ContactPage } from "../ContactsPage/ContactPage";
-import IconButton from "@mui/material/IconButton";
-import HomeIcon from "@mui/icons-material/Home";
+import { Footer } from "../../Footer/Footer";
 
 type TenderPageType = {
     heading: string;
@@ -26,13 +24,11 @@ type TenderPageType = {
     subtitle: string;
 };
 export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, ...other }) => {
-    const [open, setOpen] = useState<boolean>(false);
     const [mode, setMode] = useState<ModeType>("");
     const [btnData, setBtnData] = useState<string>("");
 
     const isOpen = useAppSelector((state) => state.tenderData.isOpen);
     const dispatch = useAppDispatch();
-
     const { pathname } = useLocation();
 
     const currentPage = () =>
@@ -53,7 +49,6 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, ...
         );
 
     const onApplyHandler = (btnData: string) => {
-        setOpen(true);
         dispatch(
             setOpenClose({
                 isOpen: !isOpen
@@ -63,10 +58,18 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, ...
         setBtnData(btnData);
     };
 
+    const handleСlose = () => {
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
+    };
+
     return (
         <div className={s.tenderContainer}>
             <NestedModal isOpen={isOpen} mode={mode} btnData={btnData} />
-            <AppBarComponent setOpen={setOpen} setMode={setMode} />
+            <AppBarComponent setOpen={handleСlose} setMode={setMode} />
             <section className={s.grid1}>
                 <Container maxWidth="xl">
                     <Box sx={{ flexGrow: 1 }} className={s.box}>
@@ -85,28 +88,9 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, ...
                 </Container>
             </section>
             <section className={s.grid2}>{currentPage()}</section>
-
-            {/*<section className={s.grid2}>*/}
-            {/*    <TenderPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <CoursesPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <RegistrationEisPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <ServicesPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <ArticlesPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <AboutPage />*/}
-            {/*</section>*/}
-            {/*<section className={s.grid2}>*/}
-            {/*    <ContactPage />*/}
-            {/*</section>*/}
+            <section className={s.footer_wrapper}>
+                <Footer />
+            </section>
             <PopUpBtn />
         </div>
     );

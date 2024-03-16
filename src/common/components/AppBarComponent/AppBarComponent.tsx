@@ -17,10 +17,9 @@ type AppBarComponentType = {
     setOpen: (value: boolean) => void;
     setMode: (value: ModeType) => void;
 };
-export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMode }) => {
+export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMode, ...other }) => {
     const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
     const { pathname } = useLocation();
-    // const pathName = location.pathname;
 
     const onSetBtnHandler = (value: ModeType) => {
         setOpen(true);

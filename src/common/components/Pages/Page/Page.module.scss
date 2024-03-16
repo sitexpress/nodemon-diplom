@@ -1,3 +1,4 @@
+@import "src/styles/index";
 .tenderContainer {
   .grid1 {
     padding-top: 350px;
@@ -31,7 +32,7 @@
     }
   }
   .grid2 {
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 40px;
     height: 100%;
     //background: #cfe8fc;
@@ -60,5 +61,18 @@
       height: 50px;
       width: max-content;
     }
+  }
+  .footer_wrapper {
+    /*position: fixed;*/
+    /*bottom: 0px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: $palette_info_dark;
+    color: white;
+    z-index:4;
+    margin-top: 40px;
   }
 }
