@@ -3,13 +3,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   bottom: 30px;
   right: 30px;
   background: #cfe8fc;
   border-radius: 50px;
   z-index: 100;
+  border: 1px solid white;
 
 }
 
@@ -20,12 +21,13 @@
   justify-content: center;
   align-items: center;
   //height: 50px;
-  //width: 50px;
-  bottom: 90px;
+  width: 60px;
+  bottom: 100px;
   right: 30px;
   background: #cfe8fc;
   border-radius: 50px;
   z-index: 100;
+  border: 1px solid white;
   .message_icon_opened {
     transition: transform 1s ease-out;
     transform: rotate(0.37turn);
@@ -41,11 +43,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //height: 50px;
-  //width: 50px;
-  bottom: 90px;
+  height: 60px;
+  width: 60px;
+  bottom: 100px;
   right: 30px;
   background: #cfe8fc;
   border-radius: 50px;
   z-index: 100;
+  border: 1px solid white;
 }
