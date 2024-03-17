@@ -1,3 +1,88 @@
+@import "src/styles/index";
 .footer {
-  width: 100%;
+    text-align: center;
+    height: 300px;
+    gap: 20px;
+    .footer_wrap {
+        display: flex;
+        justify-content: space-between;
+        .footer_one {
+            display: flex;
+            justify-content: space-between;
+            gap: 200px;
+            .footer_study {
+                h4 {
+                    margin-bottom: 30px;
+                    text-align: start;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+            .footer_service {
+                h4 {
+                    margin-bottom: 30px;
+                    text-align: start;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+        }
+        .footer_two {
+            display: flex;
+            justify-content: space-between;
+            gap: 200px;
+            .footer_interesting {
+                h4 {
+                    margin-bottom: 30px;
+                    text-align: start;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+            .footer_contacts {
+                h4 {
+                    margin-bottom: 30px;
+                    text-align: start;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
 }
+
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    width: 100%;
+    border-top: 1px dotted white;
+    .btn {
+        width: 170px;
+        height: 40px;
+    }
+}
+
+@import "Footer.media";

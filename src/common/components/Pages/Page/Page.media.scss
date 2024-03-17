@@ -141,7 +141,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 90px;
+            height: 800px;
             width: 100%;
             background-color: $palette_info_dark;
             color: white;
@@ -293,7 +293,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 90px;
+            height: 1000px;
             width: 100%;
             background-color: $palette_info_dark;
             color: white;
@@ -453,9 +453,9 @@
             flex-wrap: wrap;
             padding-left: 10px;
             padding-right: 10px;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 90px;
+            height: 1200px;
             width: 100%;
             background-color: $palette_info_dark;
             color: white;
@@ -617,7 +617,7 @@
             padding-right: 10px;
             justify-content: center;
             align-items: center;
-            height: 90px;
+            height: 1200px;
             width: 100%;
             background-color: $palette_info_dark;
             color: white;

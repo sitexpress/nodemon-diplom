@@ -113,7 +113,11 @@ function App() {
             </section>
 
             <section className={s.footer_wrapper}>
-                <Footer />
+                <Container maxWidth="xl">
+                    <Box className={s.box}>
+                        <Footer />
+                    </Box>
+                </Container>
             </section>
             <PopUpBtn />
         </div>

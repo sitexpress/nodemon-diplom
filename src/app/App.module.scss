@@ -1,194 +1,188 @@
 @import "src/styles/index";
 
 .app_container {
-  text-align: center;
-  padding:0;
-  margin: 0;
-  .grid1 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    height: 100%;
-    .box {
-      //background: #cfe8fc;
-      height: 100%;
-      margin-bottom: 40px;
-      .heading {
-        margin-bottom: 40px;
-        h2 {
-          font-size: 24px;
-        }
-      }
-      .grid_content {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    .grid1 {
+        padding-top: 40px;
+        padding-bottom: 40px;
         height: 100%;
-      }
-    }
-  }
-  .grid2 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    height: 100%;
-    background: #cfe8fc;
-    .box {
-      //background: #cfe8fc;
-      height: 100%;
-      margin-bottom: 40px;
-      .heading {
-        margin-bottom: 40px;
-        h2 {
-          font-size: 24px;
+        .box {
+            //background: #cfe8fc;
+            height: 100%;
+            margin-bottom: 40px;
+            .heading {
+                margin-bottom: 40px;
+                h2 {
+                    font-size: 24px;
+                }
+            }
+            .grid_content {
+                height: 100%;
+            }
         }
-      }
-      .grid_content {
+    }
+    .grid2 {
+        padding-top: 40px;
+        padding-bottom: 40px;
         height: 100%;
-      }
+        background: #cfe8fc;
+        .box {
+            //background: #cfe8fc;
+            height: 100%;
+            margin-bottom: 40px;
+            .heading {
+                margin-bottom: 40px;
+                h2 {
+                    font-size: 24px;
+                }
+            }
+            .grid_content {
+                height: 100%;
+            }
+        }
     }
-  }
 
-  .grid3 {
-    padding-top: 40px;
-    margin-bottom: 40px;
-    height: 100%;
-    //background: #cfe8fc;
-    .box {
-      //background: #cfe8fc;
-      height: 100%;
-      margin-bottom: 40px;
-      .heading {
+    .grid3 {
+        padding-top: 40px;
         margin-bottom: 40px;
-        h2 {
-          font-size: 24px;
-        }
-      }
-      .grid_content {
         height: 100%;
-      }
+        //background: #cfe8fc;
+        .box {
+            //background: #cfe8fc;
+            height: 100%;
+            margin-bottom: 40px;
+            .heading {
+                margin-bottom: 40px;
+                h2 {
+                    font-size: 24px;
+                }
+            }
+            .grid_content {
+                height: 100%;
+            }
+        }
     }
-  }
 
-  .grid4 {
-    padding-top: 40px;
-    margin-bottom: 40px;
-    height: 100%;
-    background: #cfe8fc;
-    .box {
-      //background: #cfe8fc;
-      height: 100%;
-      margin-bottom: 40px;
-
-      .heading {
+    .grid4 {
+        padding-top: 40px;
         margin-bottom: 40px;
-
-        h2 {
-          font-size: 24px;
-        }
-        h4 {
-          font-size: 14px;
-          padding-top: 20px;
-        }
-      }
-
-      .grid_content {
         height: 100%;
-      }
+        background: #cfe8fc;
+        .box {
+            //background: #cfe8fc;
+            height: 100%;
+            margin-bottom: 40px;
+
+            .heading {
+                margin-bottom: 40px;
+
+                h2 {
+                    font-size: 24px;
+                }
+                h4 {
+                    font-size: 14px;
+                    padding-top: 20px;
+                }
+            }
+
+            .grid_content {
+                height: 100%;
+            }
+        }
     }
-  }
 
-  .grid5 {
-    padding-top: 40px;
-    margin-bottom: 40px;
-    height: 100%;
-    //background: #cfe8fc;
-    .box {
-      //background: #cfe8fc;
-      height: 100%;
-      margin-bottom: 100px;
-
-      .heading {
+    .grid5 {
+        padding-top: 40px;
         margin-bottom: 40px;
-
-        h2 {
-          font-size: 24px;
-        }
-        h4 {
-          font-size: 14px;
-          padding-top: 20px;
-        }
-      }
-
-      .grid_content {
         height: 100%;
-      }
+        //background: #cfe8fc;
+        .box {
+            //background: #cfe8fc;
+            height: 100%;
+            margin-bottom: 100px;
+
+            .heading {
+                margin-bottom: 40px;
+
+                h2 {
+                    font-size: 24px;
+                }
+                h4 {
+                    font-size: 14px;
+                    padding-top: 20px;
+                }
+            }
+
+            .grid_content {
+                height: 100%;
+            }
+        }
     }
-  }
 
-  .footer_wrapper {
-    /*position: fixed;*/
-    /*bottom: 0px;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 100%;
-    background-color: $palette_info_dark;
-    color: white;
-    z-index:4;
-    margin-top: 40px;
-  }
-
-  .btn_up {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    bottom: 30px;
-    right: 30px;
-    background: #cfe8fc;
-    border-radius: 50px;
-  }
-
-  .btn_chat_opened {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    //height: 50px;
-    //width: 50px;
-    bottom: 90px;
-    right: 30px;
-    background: #cfe8fc;
-    border-radius: 50px;
-    .message_icon_opened {
-      transition: transform 1s ease-out;
-      transform: rotate(0.37turn);
+    .footer_wrapper {
+        /*position: fixed;*/
+        /*bottom: 0px;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        width: 100vw;
+        background-color: $palette_info_dark;
+        color: white;
+        z-index: 4;
+        //margin-top: 40px;
     }
-    .message_icon_closed {
-        transition: transform 1s ease-out;
-        transform: rotate(0turn);
+
+    .btn_up {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        bottom: 30px;
+        right: 30px;
+        background: #cfe8fc;
+        border-radius: 50px;
     }
-  }
 
-  .btn_chat_closed {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //height: 50px;
-    //width: 50px;
-    bottom: 90px;
-    right: 30px;
-    background: #cfe8fc;
-    border-radius: 50px;
-    transition: ease-in-out;
-  }
+    .btn_chat_opened {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //height: 50px;
+        //width: 50px;
+        bottom: 90px;
+        right: 30px;
+        background: #cfe8fc;
+        border-radius: 50px;
+        .message_icon_opened {
+            transition: transform 1s ease-out;
+            transform: rotate(0.37turn);
+        }
+        .message_icon_closed {
+            transition: transform 1s ease-out;
+            transform: rotate(0turn);
+        }
+    }
 
+    .btn_chat_closed {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //height: 50px;
+        //width: 50px;
+        bottom: 90px;
+        right: 30px;
+        background: #cfe8fc;
+        border-radius: 50px;
+        transition: ease-in-out;
+    }
 }
 
 @import "App.media";
-
-
-
-
-
