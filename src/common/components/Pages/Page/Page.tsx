@@ -168,22 +168,46 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
                                     <IconButton color="primary" aria-label="tender">
                                         <AdminPanelSettingsIcon className={s.icon_group} />
                                     </IconButton>
-                                    <h4>{pageData[0][0].head}</h4>
-                                    <p>{pageData[0][0].subheader}</p>
+                                    <h4>{pageData[1][0].head}</h4>
+                                    <p>{pageData[1][0].subheader}</p>
                                 </div>
                                 <div className={s.moto}>
                                     <IconButton color="primary" aria-label="tender">
                                         <FactCheckIcon className={s.icon_group} />
                                     </IconButton>
-                                    <h4>{pageData[0][1].head}</h4>
-                                    <p>{pageData[0][1].subheader}</p>
+                                    <h4>{pageData[1][1].head}</h4>
+                                    <p>{pageData[1][1].subheader}</p>
                                 </div>
                                 <div className={s.moto}>
                                     <IconButton color="primary" aria-label="tender">
                                         <HandshakeIcon className={s.icon_group} />
                                     </IconButton>
-                                    <h4>{pageData[0][2].head}</h4>
-                                    <p>{pageData[0][2].subheader}</p>
+                                    <h4>{pageData[1][2].head}</h4>
+                                    <p>{pageData[1][2].subheader}</p>
+                                </div>
+                            </div>
+                        ) : pathname === "/courses" ? (
+                            <div className={s.bottom_moto_list}>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <AdminPanelSettingsIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[1][0].head}</h4>
+                                    <p>{pageData[1][0].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <FactCheckIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[1][1].head}</h4>
+                                    <p>{pageData[1][1].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <HandshakeIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[1][2].head}</h4>
+                                    <p>{pageData[1][2].subheader}</p>
                                 </div>
                             </div>
                         ) : (

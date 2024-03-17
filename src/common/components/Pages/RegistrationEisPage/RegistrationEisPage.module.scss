@@ -1,0 +1,155 @@
+@import "src/styles/index";
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    //gap: 20px;
+    height: 200px;
+
+    .heading {
+        //padding-top: 40px;
+        text-align: center;
+        max-width: 1000px;
+    }
+
+    .subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+        gap: 40px;
+
+        .icon_group {
+            width: 150px;
+            height: auto;
+        }
+
+        .article_text {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-top: 40px;
+
+            p {
+                font-size: 18px;
+                line-height: 24px;
+                margin: 0 auto;
+                text-align: start;
+            }
+        }
+    }
+}
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    min-height: 1000px;
+
+    .heading {
+        padding-top: 40px;
+        text-align: center;
+        max-width: 1000px;
+    }
+
+    .article_video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        padding: 10px;
+        background: #cfe8fc;
+        width: 1000px;
+        line-height: 24px;
+
+        .icon_group {
+            width: 50px;
+            height: auto;
+            border: 1px solid white;
+        }
+
+        q {
+            font-size: 18px;
+            margin: 0 auto;
+        }
+    }
+
+    .player_wrapper {
+        video {
+            width: 1000px;
+            height: auto;
+        }
+    }
+
+    .article_above_video {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        max-width: 1000px;
+
+        .check_list {
+            font-size: 18px;
+            line-height: 24px;
+
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                text-decoration: dotted;
+                gap: 10px;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .descr {
+                        font-size: 16px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 24px;
+
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                text-decoration: dotted;
+                gap: 10px;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .descr {
+                        font-size: 16px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import "RegistrationEisPage.media";
