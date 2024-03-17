@@ -186,17 +186,33 @@ export default function SwipeableTextMobileStepper() {
                             <Box className={s.subtitle_wrapper}>
                                 <h2 className={s.subtitle}>{steps[activeStep].description}</h2>
                             </Box>
-                            <Button
-                                className={s.content_btn}
-                                variant="outlined"
-                                sx={{
-                                    background: "white",
-                                    color: "#42a5f5",
-                                    "&:hover": { background: "#42a5f5", color: "white" }
-                                }}
-                            >
-                                Узнать подробнее
-                            </Button>
+                            <div className={s.btn_wrapper}>
+                                <Button
+                                    className={s.content_btn}
+                                    variant="outlined"
+                                    sx={{
+                                        background: "white",
+                                        color: "#42a5f5",
+                                        "&:hover": { background: "#42a5f5", color: "white" }
+                                    }}
+                                >
+                                    Узнать подробнее
+                                </Button>
+                                <div className={s.hiddenBtn}>
+                                    <Button
+                                        className={s.btn}
+                                        variant="contained"
+                                        sx={{
+                                            background: "#FF0000",
+                                            color: "white",
+                                            "&:hover": { background: "#42a5f5", color: "white" }
+                                        }}
+                                        // onClick={() => onSetBtnHandler("toApplyApplication")}
+                                    >
+                                        Отправить заявку
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </AutoPlaySwipeableViews>

@@ -50,11 +50,13 @@
   align-items: center;
   gap: 20px;
   min-height: 1000px;
+
   .heading {
     padding-top: 40px;
     text-align: center;
     max-width: 1000px;
   }
+
   .article_video {
     display: flex;
     justify-content: center;
@@ -90,6 +92,7 @@
     justify-content: flex-start;
     gap: 40px;
     max-width: 1000px;
+
     .check_list {
       font-size: 18px;
       line-height: 24px;
@@ -151,7 +154,7 @@
   }
 }
 
-
+@import "TenderPage.media";
 
 
 

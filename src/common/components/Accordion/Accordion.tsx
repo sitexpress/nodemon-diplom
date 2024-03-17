@@ -15,7 +15,7 @@ export const AccordionExpandIcon = () => {
                     <Typography>Можно ли воспользоваться услугой тендерного сопровождения единоразово?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         Да, конечно. Вы можете воспользоваться нашей помощью для участия в одних торгах или в
                         нескольких. Второй вариант имеет большие шансы, что ваши вложения окупятся.
                     </Typography>
@@ -29,7 +29,7 @@ export const AccordionExpandIcon = () => {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         Разумеется, если вы новый участник или ваша аккредитация заканчивается мы поможем вам получить
                         аккредитацию по новым правилам, покажем, как работать с электронной подписью и электронными
                         площадками.
@@ -44,7 +44,7 @@ export const AccordionExpandIcon = () => {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         Наши специалисты на время сопровождения в тендерах становятся вашей командой. И чтобы
                         качественно выполнить работу мы вовлекаем участника в процесс. Вашей задачей будет принятие
                         решений, постановка задач.
@@ -56,7 +56,7 @@ export const AccordionExpandIcon = () => {
                     <Typography>На что нужно обратить внимание в договоре по тендерному сопровождению?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         В договоре должно быть прописано какие услуги входят в ваш пакет. Перечень услуг тендерного
                         сопровождения под ключ в каждой компании отличается. Вы можете поинтересоваться у сотрудника
                         компании входит ли тот или иной этап в перечень услуг. При возможности просите добавить или
@@ -69,7 +69,7 @@ export const AccordionExpandIcon = () => {
                     <Typography>Сколько стоит тендерное сопровождение?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         Цена индивидуальна для каждого в зависимости от того, какая именно помощь в участии в тендерах
                         нужна. На первой встрече вам предоставят перечень услуг, которые наша компания предлагает, и вы
                         выберете, что нужно именно вам. Например, у вас уже есть электронная подпись, и вы не нуждаетесь
@@ -82,7 +82,7 @@ export const AccordionExpandIcon = () => {
                     <Typography>Тендерное сопровождение под ключ в Москве будет стоить дороже?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    <Typography fontStyle={"italic"} color={"primary"}>
                         Цена за стандартные услуги для всех регионов одинаковая. Но исходя из особенностей рынка в том
                         или ином регионе, ваших запросов и трудности выполнения работы цена может отличаться.
                         Качественное тендерное сопровождение не может стоить копейки, так как это большой объем сбора
