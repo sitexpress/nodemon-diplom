@@ -122,17 +122,9 @@
     }
 
     .footer_wrapper {
-        /*position: fixed;*/
-        /*bottom: 0px;*/
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 500px;
-        width: 100vw;
         background-color: $palette_info_dark;
         color: white;
-        z-index: 4;
-        //margin-top: 40px;
+        //z-index: 4;
     }
 
     .btn_up {
