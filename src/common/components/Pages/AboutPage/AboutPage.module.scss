@@ -105,4 +105,40 @@
     }
 }
 
+.grid3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 600px;
+    //background: #cfe8fc;
+    .box3 {
+        h2 {
+            padding-top: 80px;
+            margin-bottom: 40px;
+        }
+        .heading_center {
+            text-align: center;
+        }
+        .article_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5px;
+            height: auto;
+            .subtitle {
+                text-align: center;
+                padding-top: 10px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            p {
+                text-align: start;
+                padding-top: 10px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
 @import "AboutPage.media";
