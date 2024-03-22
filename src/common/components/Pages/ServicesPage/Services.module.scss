@@ -1,0 +1,15 @@
+@import "src/styles/index";
+.box {
+    margin-bottom: 40px;
+    .heading {
+        h4 {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    }
+    .grid_content {
+        height: 100%;
+    }
+}
+
+@import "Services.media";

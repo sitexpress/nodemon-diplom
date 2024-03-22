@@ -43,7 +43,7 @@ const router = createBrowserRouter([
                     "Обучение тендерам и госзакупкам для государственных, коммерческих организаций и предпринимателей, желающих познакомиться поближе с 44-ФЗ и 223-ФЗ, получить эффективные работающие инструменты и начать выигрывать тендеры. Обучение тендерам проходит в Москве или дистанционно по России."
                 }
                 btnText={"ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ ПО ОБУЧЕНИЮ"}
-                bottomHeading={""}
+                bottomHeading={"Обучение тендерам с нуля"}
             />
         )
     },
@@ -56,13 +56,20 @@ const router = createBrowserRouter([
                     "Как пройти регистрацию в ЕИС поставщику. Последние изменения и требования, пошаговая инструкция 2022 года."
                 }
                 btnText={"ЗАКАЗАТЬ РЕГИСТРАЦИЮ В ЕИС"}
-                bottomHeading={""}
+                bottomHeading={"Регистрация в ЕИС у нас"}
             />
         )
     },
     {
         path: "/services",
-        element: <Page heading={"Услуги"} subtitle={""} btnText={""} bottomHeading={""} />
+        element: (
+            <Page
+                heading={"Услуги"}
+                subtitle={"Поможем, сделаем, научим"}
+                btnText={"ОТПРАВИТЬ ЗАЯВКУ НА УСЛУГИ"}
+                bottomHeading={"Поможем, сделаем, научим"}
+            />
+        )
     },
     {
         path: "/articles",
@@ -73,7 +80,7 @@ const router = createBrowserRouter([
                     "Если вы решили принять участие в электронном аукционе: выполнить работы, оказать услуги или поставить товар для государственного заказчика, ознакомьтесь с 44-ФЗ. Публикуем пошаговую инструкцию по участию в электронных торгах из 10 шагов: от получения ЭЦП и аккредитации на площадке, до подачи заявки и подписания контракта."
                 }
                 btnText={"Читать статью"}
-                bottomHeading={""}
+                bottomHeading={"Актуальные статьи на почту"}
             />
         )
     },
@@ -91,21 +98,23 @@ const router = createBrowserRouter([
                     "\n" +
                     "Помогаем решить конкретные задачи здесь и сейчас, а также сформировать видение на будущее, сэкономить время и ресурсы."
                 }
-                btnText={""}
+                btnText={"НАШИ КОНТАКТЫ"}
                 bottomHeading={""}
             />
         )
     },
     {
         path: "/contacts",
-        element: <Page heading={"Контакты"} subtitle={""} btnText={""} bottomHeading={""} />
+        element: <Page heading={"Контакты"} subtitle={""} btnText={"ОТПРАВИТЬ ЗАЯВКУ НА УСЛУГИ"} bottomHeading={""} />
     }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <Provider store={store}>
-        <RouterProvider router={router} />
+        <div>
+            <RouterProvider router={router} />
+        </div>
     </Provider>
 );
 

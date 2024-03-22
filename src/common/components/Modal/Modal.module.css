@@ -7,8 +7,8 @@
     width: 380px;
     height: 380px;
     background-color: white;
-    borderRadius: 1px;
-    boxShadow: 24;
+    borderradius: 1px;
+    boxshadow: 24;
 }
 
 .box_wrapper {
@@ -18,12 +18,12 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: 380px;
     height: 380px;
     background-color: white;
-    boxShadow: 24;
+    boxshadow: 24;
     border-radius: 4px;
     padding: 30px;
 }
@@ -33,7 +33,7 @@
     top: 0;
     right: 0;
     padding: 10px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .btn_wrapper {
@@ -68,21 +68,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
 }
 .logo_name {
     font-size: 24px;
 }
 img {
-      height: auto;
-      width: 60px;
-      fill: red;
-  }
+    height: auto;
+    width: 60px;
+    fill: red;
+}
 .logo_wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-
-
-

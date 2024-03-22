@@ -8,8 +8,13 @@ import silliconValleyVideo from "../../../../assets/video/Bitcoin Warning_Silico
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { AccordionExpandIcon } from "../../Accordion/Accordion";
+import { ScrollToTop } from "../../../../utils/ScrollToTop";
 
 export const TenderPage = () => {
+    React.useEffect(() => {
+        ScrollToTop.instant();
+        return () => ScrollToTop.instant();
+    }, []);
     return (
         <div>
             <Container maxWidth="xl">

@@ -7,15 +7,13 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 import { useAppDispatch, useAppSelector } from "../../../store/store";
 import { setChatOpenClose } from "../../../store/tenderDataSlice";
+import { ScrollToTop } from "../../../utils/ScrollToTop";
 
 const PopUpBtn = () => {
     const isChatOpen = useAppSelector((state) => state.tenderData.isChatOpen);
     const dispatch = useAppDispatch();
     const handlerScrollUp = () => {
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            window.scrollBy(0, -50);
-            setTimeout(handlerScrollUp, 10);
-        }
+        ScrollToTop.smooth();
     };
 
     const handlerChatOpenCloseUp = () => {

@@ -8,8 +8,13 @@ import silliconValleyVideo from "../../../../assets/video/Bitcoin Warning_Silico
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { AccordionExpandIcon } from "../../Accordion/Accordion";
 import s from "./RegistrationEisPage.module.scss";
+import { ScrollToTop } from "../../../../utils/ScrollToTop";
 
 export const RegistrationEisPage = () => {
+    React.useEffect(() => {
+        ScrollToTop.instant();
+        return () => ScrollToTop.instant();
+    }, []);
     return (
         <div>
             <Container maxWidth="xl">

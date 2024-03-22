@@ -10,7 +10,8 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useState } from "react";
-import { ModeType } from "../../../store/tenderDataSlice";
+import { ModeType, setMode, setOpenClose } from "../../../store/tenderDataSlice";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -43,12 +44,10 @@ const grid3Data = [
 
 type GridType = {
     grid: "grid1" | "grid3";
-    isOpen: boolean;
     setBtnData: (value: string) => void;
-    setMode: (value: ModeType) => void;
-    setOpen: (value: boolean) => void;
+    // setOpen: (value: boolean) => void;
 };
-export const ResponsiveGrid: React.FC<GridType> = ({ grid, isOpen, setOpen, setMode, setBtnData, ...other }) => {
+export const ResponsiveGrid: React.FC<GridType> = ({ grid, setBtnData, ...other }) => {
     const [grid1Data, setGrid1Data] = useState([
         {
             heading: "Подготовка заявки на тендер",
@@ -111,6 +110,9 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid, isOpen, setOpen, setM
             right: false
         }
     ]);
+    const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const mode = useAppSelector((state) => state.tenderData.mode);
+    const dispatch = useAppDispatch();
 
     const onLeftBtnGrid1DataRefresh = (heading: string, active: boolean) => {
         if (active === true) return;
@@ -128,9 +130,20 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid, isOpen, setOpen, setM
     };
 
     const onApplyHandler = (btnData: string) => {
-        setOpen(true);
-        setMode("toApplyGrid1");
+        // setOpen(true);
+        // setMode("toApplyGrid1");
         setBtnData(btnData);
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
+
+        dispatch(
+            setMode({
+                mode: "toApplyGrid1"
+            })
+        );
     };
 
     return (

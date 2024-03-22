@@ -6,8 +6,13 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import silliconValleyVideo from "../../../../assets/video/Bitcoin Warning_Silicon Valley.mp4";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import s from "./CoursesPage.module.scss";
+import { ScrollToTop } from "../../../../utils/ScrollToTop";
 
 export const CoursesPage = () => {
+    React.useEffect(() => {
+        ScrollToTop.instant();
+        return () => ScrollToTop.instant();
+    }, []);
     return (
         <div>
             <Container maxWidth="xl">

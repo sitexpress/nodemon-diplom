@@ -1,0 +1,61 @@
+@import "src/styles/index";
+.box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 140px;
+    margin-bottom: 40px;
+    gap: 30px;
+    .address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        //margin-right: 10px;
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+            .add {
+                font-size: 14px;
+            }
+            .phone {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-top: 30px;
+                font-size: 16px;
+            }
+            .mail {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-top: 10px;
+                color: $palette_primary_light;
+            }
+            .services {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-top: 10px;
+                font-size: 12px;
+                color: gray;
+            }
+        }
+    }
+    .map {
+        img {
+            height: auto;
+            width: 600px;
+        }
+    }
+}
+
+.box1 {
+    //background: #cfe8fc;
+}
+
+@import "ContactPage.media";

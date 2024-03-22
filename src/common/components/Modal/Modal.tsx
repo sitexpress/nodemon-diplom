@@ -12,14 +12,16 @@ import { ModeType, setOpenClose } from "../../../store/tenderDataSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/store";
 
 interface ModalType {
-    isOpen: boolean;
-    mode: ModeType;
     activeMenuSection?: string;
     btnData: string;
 }
 
-export const NestedModal: React.FC<ModalType> = ({ isOpen, mode, btnData, ...other }) => {
+export const NestedModal: React.FC<ModalType> = ({ btnData, ...other }) => {
     const [newMenuSectionValue, setNewMenuSectionValue] = useState("");
+
+    const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const mode = useAppSelector((state) => state.tenderData.mode);
+
     const dispatch = useAppDispatch();
 
     const handleOpen = () => {

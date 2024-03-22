@@ -16,9 +16,12 @@ const tenderDataSlice = createSlice({
         },
         setChatOpenClose: (state, action: PayloadAction<{ isChatOpen: boolean }>) => {
             state.isChatOpen = action.payload.isChatOpen;
+        },
+        setMode: (state, action: PayloadAction<{ mode: ModeType }>) => {
+            state.mode = action.payload.mode;
         }
     }
 });
 
-export const { setOpenClose, setChatOpenClose } = tenderDataSlice.actions;
+export const { setOpenClose, setChatOpenClose, setMode } = tenderDataSlice.actions;
 export const tenderDataSliceReducer = tenderDataSlice.reducer;

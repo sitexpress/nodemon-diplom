@@ -4,11 +4,11 @@ import Box from "@mui/material/Box";
 import { Container } from "@mui/material";
 import s from "./Page.module.scss";
 import Button from "@mui/material/Button";
-import { ModeType, setOpenClose } from "../../../../store/tenderDataSlice";
+import { ModeType, setMode, setOpenClose } from "../../../../store/tenderDataSlice";
 import { useAppDispatch, useAppSelector } from "../../../../store/store";
 import { NestedModal } from "../../Modal/Modal";
 import PopUpBtn from "../../PopUpBtn/PopUpBtn";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { TenderPage } from "../TenderPage/TenderPage";
 import { CoursesPage } from "../CoursesPage/CoursesPage";
 import { RegistrationEisPage } from "../RegistrationEisPage/RegistrationEisPage";
@@ -21,7 +21,6 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import IconButton from "@mui/material/IconButton";
-import GroupsIcon from "@mui/icons-material/Groups";
 
 type TenderPageType = {
     heading: string;
@@ -30,10 +29,10 @@ type TenderPageType = {
     bottomHeading: string;
 };
 export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bottomHeading, ...other }) => {
-    const [mode, setMode] = useState<ModeType>("");
     const [btnData, setBtnData] = useState<string>("");
 
     const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const mode = useAppSelector((state) => state.tenderData.mode);
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
 
@@ -113,14 +112,21 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
             pathname === "/contacts" && <ContactPage />
         );
 
-    const onApplyHandler = (btnData: string) => {
-        dispatch(
-            setOpenClose({
-                isOpen: !isOpen
-            })
-        );
-        setMode("toApplyGrid1");
-        setBtnData(btnData);
+    const onApplyHandler = (btnData: string | null) => {
+        if (btnData !== null) {
+            dispatch(
+                setOpenClose({
+                    isOpen: !isOpen
+                })
+            );
+
+            dispatch(
+                setMode({
+                    mode: "toApplyGrid1"
+                })
+            );
+            setBtnData(btnData);
+        }
     };
 
     const handleСlose = () => {
@@ -133,35 +139,70 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
 
     return (
         <div className={s.tenderContainer}>
-            <NestedModal isOpen={isOpen} mode={mode} btnData={btnData} />
-            <AppBarComponent setOpen={handleСlose} setMode={setMode} />
-            <section className={s.grid1}>
-                <Container maxWidth="xl">
-                    <Box sx={{ flexGrow: 1 }} className={s.box}>
-                        <div className={s.heading}>
-                            <h2>{heading}</h2>
-                        </div>
-                        <div className={s.subtitle}>
-                            <p>{subtitle}</p>
-                        </div>
-                        {btnText !== "" && (
-                            <Button className={s.btn} variant={"contained"} onClick={() => onApplyHandler(btnText)}>
-                                {btnText}
-                            </Button>
-                        )}
-                    </Box>
-                </Container>
-            </section>
+            <NestedModal btnData={btnData} />
+            <AppBarComponent />
+            {pathname === "/contacts" ? (
+                ""
+            ) : (
+                <section className={s.grid1}>
+                    <Container maxWidth="xl">
+                        <Box
+                            className={s.box}
+                            style={{
+                                flexGrow: 1,
+                                alignItems: pathname === "/about" ? "flex-start" : "center"
+                            }}
+                        >
+                            <div
+                                className={s.heading}
+                                style={{
+                                    textAlign: pathname === "/about" ? "start" : "center"
+                                }}
+                            >
+                                <h2>{heading}</h2>
+                            </div>
+                            <div className={s.subtitle}>
+                                <p
+                                    style={{
+                                        textAlign: pathname === "/about" ? "start" : "center"
+                                    }}
+                                >
+                                    {subtitle}
+                                </p>
+                            </div>
+                            {btnText !== "" && (
+                                <Button className={s.btn} variant={"contained"} onClick={() => onApplyHandler(btnText)}>
+                                    {btnText}
+                                </Button>
+                            )}
+                        </Box>
+                    </Container>
+                </section>
+            )}
+
             <section className={s.grid2}>{currentPage()}</section>
-            <section className={s.grid3}>
+            <section
+                className={s.grid3}
+                style={{
+                    paddingBottom: pathname === "/contacts" || pathname === "/about" ? 40 : 0,
+                    paddingTop: pathname === "/contacts" || pathname === "/about" ? 0 : 100
+                }}
+            >
                 <Container maxWidth="xl">
-                    <Box sx={{ flexGrow: 1 }} className={s.box}>
+                    <Box
+                        className={s.box}
+                        style={{
+                            flexGrow: 1,
+                            height: pathname === "/contacts" || pathname === "/about" ? 100 : 600,
+                            display: pathname === "/contacts" || pathname === "/about" ? "block" : "flex",
+                            textAlign: pathname === "/contacts" ? "center" : "center",
+                            paddingTop: pathname === "/contacts" || pathname === "/about" ? 40 : 0
+                        }}
+                    >
                         <div className={s.heading}>
                             <h2>{bottomHeading}</h2>
                         </div>
-                        <div className={s.subtitle}>
-                            <p>{subtitle}</p>
-                        </div>
+                        <div className={s.subtitle}>{pathname !== "/about" ? <p> {subtitle}</p> : ""}</div>
                         {pathname === "/tender-support" ? (
                             <div className={s.bottom_moto_list}>
                                 <div className={s.moto}>
@@ -210,13 +251,74 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
                                     <p>{pageData[1][2].subheader}</p>
                                 </div>
                             </div>
+                        ) : pathname === "/registration-eis" ? (
+                            <div className={s.bottom_moto_list}>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <AdminPanelSettingsIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[2][0].head}</h4>
+                                    <p>{pageData[2][0].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <FactCheckIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[2][1].head}</h4>
+                                    <p>{pageData[2][1].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <HandshakeIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[2][2].head}</h4>
+                                    <p>{pageData[2][2].subheader}</p>
+                                </div>
+                            </div>
+                        ) : pathname === "/services" ? (
+                            <div className={s.bottom_moto_list}>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <AdminPanelSettingsIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[3][0].head}</h4>
+                                    <p>{pageData[3][0].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <FactCheckIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[3][1].head}</h4>
+                                    <p>{pageData[3][1].subheader}</p>
+                                </div>
+                                <div className={s.moto}>
+                                    <IconButton color="primary" aria-label="tender">
+                                        <HandshakeIcon className={s.icon_group} />
+                                    </IconButton>
+                                    <h4>{pageData[3][2].head}</h4>
+                                    <p>{pageData[3][2].subheader}</p>
+                                </div>
+                            </div>
                         ) : (
                             ""
                         )}
 
                         {btnText !== "" && (
-                            <Button className={s.btn} variant={"contained"} onClick={() => onApplyHandler(btnText)}>
-                                {btnText}
+                            <Button
+                                className={s.btn}
+                                variant={"contained"}
+                                onClick={() => {
+                                    if (pathname === "/about") return;
+                                    onApplyHandler(btnText);
+                                }}
+                            >
+                                {pathname === "/about" ? (
+                                    <NavLink className={s.redir} to="/services">
+                                        {btnText}
+                                    </NavLink>
+                                ) : (
+                                    btnText
+                                )}
                             </Button>
                         )}
                     </Box>

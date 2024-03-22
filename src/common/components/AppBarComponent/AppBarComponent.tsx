@@ -11,19 +11,28 @@ import s from "./AppBarComponent.module.scss";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { NavLink, useLocation } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
-import { ModeType } from "../../../store/tenderDataSlice";
+import { ModeType, setMode, setOpenClose } from "../../../store/tenderDataSlice";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
 
-type AppBarComponentType = {
-    setOpen: (value: boolean) => void;
-    setMode: (value: ModeType) => void;
-};
-export const AppBarComponent: React.FC<AppBarComponentType> = ({ setOpen, setMode, ...other }) => {
+export const AppBarComponent = () => {
     const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
+    const mode = useAppSelector((state) => state.tenderData.mode);
+    const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const dispatch = useAppDispatch();
     const { pathname } = useLocation();
 
     const onSetBtnHandler = (value: ModeType) => {
-        setOpen(true);
-        setMode(value);
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
+
+        dispatch(
+            setMode({
+                mode: value
+            })
+        );
     };
 
     const mainMenu = {

@@ -1,9 +1,29 @@
 import React from "react";
 import s from "./Footer.module.scss";
 import Button from "@mui/material/Button";
+import { NavLink } from "react-router-dom";
+import { ModeType, setMode, setOpenClose } from "../../../store/tenderDataSlice";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
+
 export const Footer = () => {
+    const isOpen = useAppSelector((state) => state.tenderData.isOpen);
+    const dispatch = useAppDispatch();
     const date = new Date();
     const year = date.getFullYear();
+
+    const onSetBtnHandler = () => {
+        dispatch(
+            setOpenClose({
+                isOpen: !isOpen
+            })
+        );
+        dispatch(
+            setMode({
+                mode: "toApplyCall"
+            })
+        );
+    };
+
     return (
         <div className={s.container}>
             <div className={s.footer}>
@@ -12,24 +32,76 @@ export const Footer = () => {
                         <div className={s.footer_study}>
                             <h4>ОБУЧЕНИЕ</h4>
                             <ul>
-                                <li>Обучение тендерам с нуля</li>
-                                <li>Обучение по 44-ФЗ</li>
-                                <li>Обучение по 223-ФЗ</li>
-                                <li>Официальный сайт закупок</li>
-                                <li>Электронные площадки торгов</li>
-                                <li>Как выиграть тендер</li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Обучение тендерам с нуля
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Обучение по 44-ФЗ
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Обучение по 223-ФЗ
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Официальный сайт закупок
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Электронные площадки торгов
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Как выиграть тендер
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                         <div className={s.footer_service}>
                             <h4>УСЛУГИ</h4>
                             <ul>
-                                <li>Регистрация в ЕИС</li>
-                                <li>Срочная аккредитация за 1 час</li>
-                                <li>Обучение тендерам и госзакупкам</li>
-                                <li>Подготовка заявки на аукцион</li>
-                                <li>Тендерное сопровождение</li>
-                                <li>Поиск тендеров</li>
-                                <li>Каталог услуг</li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Регистрация в ЕИС
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Срочная аккредитация за 1 час
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Обучение тендерам и госзакупкам
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Подготовка заявки на аукцион
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Тендерное сопровождение
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Поиск тендеров
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Каталог услуг
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -37,12 +109,36 @@ export const Footer = () => {
                         <div className={s.footer_interesting}>
                             <h4>ИНТЕРЕСНО</h4>
                             <ul>
-                                <li>44-ФЗ с комментариями</li>
-                                <li>223-ФЗ с комментариями</li>
-                                <li>Электронный аукцион</li>
-                                <li>Открытый конкурс</li>
-                                <li>Обеспечение заявки</li>
-                                <li>Заключение контракта</li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        44-ФЗ с комментариями
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        223-ФЗ с комментариями
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Электронный аукцион
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Открытый конкурс
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Обеспечение заявки
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={s.footer_link} to="/services">
+                                        Заключение контракта
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                         <div className={s.footer_contacts}>
@@ -50,14 +146,26 @@ export const Footer = () => {
                             <ul>
                                 <li>
                                     <div>тендерная документация:</div>
-                                    <div>+7 (495) 648-65-51</div>
+                                    <div>
+                                        <a className={s.footer_link} href="tel:+74956486551">
+                                            +7 (495) 648-65-51
+                                        </a>
+                                    </div>
                                 </li>
                                 <li>
                                     <div>банковские гарантии:</div>
-                                    <div>+7 (495) 147-71-51</div>
+                                    <div>
+                                        <a className={s.footer_link} href="tel:+74951477151">
+                                            +7 (495) 147-71-51
+                                        </a>
+                                    </div>
                                 </li>
-                                <li>info@open-torg.ru</li>
-                                <li>123000, Москва, Арбат 555</li>
+                                <li>
+                                    <a className={s.footer_link} href="mailto: info@open-torg.ru">
+                                        info@open-torg.ru
+                                    </a>
+                                </li>
+                                <li className={s.footer_link}>123000, Москва, Арбат 555</li>
                             </ul>
                         </div>
                     </div>
@@ -72,11 +180,10 @@ export const Footer = () => {
                         variant="outlined"
                         sx={{
                             background: "white",
-                            textAlign: "start",
                             color: "#42a5f5",
                             "&:hover": { background: "#42a5f5", color: "white" }
                         }}
-                        // onClick={() => onSetBtnHandler("toApplyCall")}
+                        onClick={onSetBtnHandler}
                     >
                         Заказать звонок
                     </Button>

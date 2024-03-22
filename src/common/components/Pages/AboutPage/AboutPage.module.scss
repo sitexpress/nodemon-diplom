@@ -1,0 +1,108 @@
+@import "src/styles/index";
+.grid1 {
+    //background: #cfe8fc;
+    //padding-top: 80px;
+    padding-bottom: 100px;
+    .box1 {
+        h2 {
+            padding-top: 80px;
+            margin-bottom: 40px;
+        }
+        .heading {
+        }
+        .heading_center {
+            text-align: center;
+        }
+        .article_aim_wrapper {
+            display: flex;
+            justify-content: space-between;
+            .article_aim {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                width: 400px;
+                height: auto;
+                .icon_group {
+                    border-radius: 60px;
+                    border: 1px solid grey;
+                    .icon {
+                        width: 60px;
+                        height: 60px;
+                        padding: 5px;
+                    }
+                }
+                h4 {
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                p {
+                    text-align: center;
+                    padding-top: 10px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        .check_list {
+            font-size: 18px;
+            line-height: 24px;
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                text-decoration: dotted;
+                gap: 10px;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .descr {
+                        font-size: 16px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+        .article_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            height: auto;
+            .subtitle {
+                text-align: center;
+                padding-top: 10px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+.grid2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 600px;
+    background: #cfe8fc;
+    .box2 {
+        h2 {
+            padding-top: 80px;
+            margin-bottom: 40px;
+        }
+        .heading_center {
+            text-align: center;
+        }
+    }
+}
+
+@import "AboutPage.media";
