@@ -43,7 +43,7 @@ const grid3Data = [
 ];
 
 type GridType = {
-    grid: "grid1" | "grid3";
+    grid: "grid1" | "grid2" | "grid3";
     setBtnData: (value: string) => void;
     // setOpen: (value: boolean) => void;
 };
@@ -190,7 +190,7 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid, setBtnData, ...other 
                         ))}
                     </Grid>
                 </Box>
-            ) : (
+            ) : grid === "grid3" ? (
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid
                         container
@@ -201,6 +201,47 @@ export const ResponsiveGrid: React.FC<GridType> = ({ grid, setBtnData, ...other 
                     >
                         {grid3Data.map((card, index) => (
                             <Grid item xs={2} sm={4} md={4} key={index}>
+                                <Item className={s.services_grid3} elevation={3}>
+                                    <h3 className={s.heading}>{card.heading}</h3>
+                                    <hr />
+                                    <div>
+                                        <ul className={s.services_grid3_content}>
+                                            <li className={s.gc_li}>
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr1}</div>
+                                            </li>
+                                            <li className={s.gc_li}>
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr2}</div>
+                                            </li>
+                                            <li className={s.gc_li}>
+                                                <div>
+                                                    <CheckCircleIcon color="primary" style={{ marginRight: "10px" }} />
+                                                </div>
+                                                <div className={s.descr}>{card.descr3}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </Item>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
+            ) : (
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid
+                        container
+                        spacing={{ xs: 2, md: 3 }}
+                        columns={{ xs: 1, sm: 8, md: 12, lg: 12 }}
+                        style={{ justifyContent: "center" }}
+                        className={s.grid3_wrapper}
+                    >
+                        {grid3Data.map((card, index) => (
+                            <Grid item xs={2} sm={6} md={6} key={index}>
                                 <Item className={s.services_grid3} elevation={3}>
                                     <h3 className={s.heading}>{card.heading}</h3>
                                     <hr />

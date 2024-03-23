@@ -100,6 +100,17 @@ function App() {
                 </Container>
             </section>
 
+            <section className={s.grid6}>
+                <Container maxWidth="xl">
+                    <Box className={s.box}>
+                        <div className={s.heading}>
+                            <h2>Отзывы о нашей работе</h2>
+                        </div>
+                        <FlickingCarousel type={"reviews"} />
+                    </Box>
+                </Container>
+            </section>
+
             <section className={s.footer_wrapper}>
                 <Container maxWidth="xl">
                     <Box className={s.box}>

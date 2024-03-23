@@ -106,7 +106,7 @@ export const AboutPage = () => {
                                 </li>
                             </ul>
                         </div>
-                        <h2 className={s.heading_center}>Несколько интересных фактов о нас</h2>
+                        <h2 className={s.heading_center}>Нам доверяют ведущие компании</h2>
                         <article className={s.article_text}>
                             <div className={s.subtitle}>
                                 Наши клиенты - наша гордость. С 2013 года более 1200 компаний разных отраслей

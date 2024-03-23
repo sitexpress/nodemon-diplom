@@ -20,6 +20,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 type FlickingCarouselType = {
     type: "partners" | "reviews";
@@ -27,13 +28,7 @@ type FlickingCarouselType = {
 export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...other }) => {
     return (
         <>
-            <Flicking
-                align="prev"
-                circular={true}
-                onMoveEnd={(e) => {
-                    console.log(e);
-                }}
-            >
+            <Flicking align="prev" circular={true} onMoveEnd={(e) => {}}>
                 {type === "partners" ? (
                     <>
                         <div className={s.panel_partners}>
@@ -58,16 +53,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                 ) : (
                     <>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={uniliver}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={uniliver}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={uniliver} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.unileverfoodsolutions.ru
+                                        <a href="www.unileverfoodsolutions.ru">www.unileverfoodsolutions.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Спасибо за опыт Вашей компании в области ведения тендеров, документальное
@@ -78,16 +77,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={zeppelin}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={zeppelin}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={zeppelin} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.zeppelin.ru
+                                        <a href="www.zeppelin.ru">www.zeppelin.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Большое спасибо за оперативную работу, поддержку и профессионализм!
@@ -96,16 +99,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={rusagro}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={rusagro}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={rusagro} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.rusagrogroup.ru
+                                        <a href="www.rusagrogroup.ru">www.rusagrogroup.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Обучение прошло плодотворно. Получили объяснение всех нюансов и механизмов.
@@ -115,16 +122,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={samsung}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={samsung}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={samsung} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.samsung.com
+                                        <a href="www.samsung.com">www.samsung.com</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Благодарим Вас за уделенное время, подробные консультации, профессиональное,
@@ -134,16 +145,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={uniliver}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={uniliver}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={uniliver} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.unileverfoodsolutions.ru
+                                        <a href="www.unileverfoodsolutions.ru">www.unileverfoodsolutions.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Спасибо за опыт Вашей компании в области ведения тендеров, документальное
@@ -154,16 +169,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={zeppelin}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={zeppelin}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={zeppelin} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.zeppelin.ru
+                                        <a href="www.zeppelin.ru">www.zeppelin.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Большое спасибо за оперативную работу, поддержку и профессионализм!
@@ -172,16 +191,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={rusagro}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={rusagro}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={rusagro} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.rusagrogroup.ru
+                                        <a href="www.rusagrogroup.ru">www.rusagrogroup.ru</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Обучение прошло плодотворно. Получили объяснение всех нюансов и механизмов.
@@ -191,16 +214,20 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                             </Card>
                         </div>
                         <div className={s.panel_reviews}>
-                            <Card sx={{ maxWidth: 345 }} className={s.img_wrapper}>
-                                <CardMedia
-                                    sx={{ height: 140 }}
-                                    image={samsung}
-                                    title="green iguana"
-                                    className={s.img}
-                                />
+                            <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{ height: 140 }}*/}
+                                {/*    image={samsung}*/}
+                                {/*    title="green iguana"*/}
+                                {/*    className={s.img_wrapper}*/}
+                                {/*/>*/}
+                                <div className={s.img_wrapper}>
+                                    <img src={samsung} alt="uniliver image" />
+                                </div>
+                                <Divider />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        www.samsung.com
+                                        <a href="www.samsung.com">www.samsung.com</a>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         "Благодарим Вас за уделенное время, подробные консультации, профессиональное,
