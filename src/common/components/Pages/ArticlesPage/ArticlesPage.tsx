@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
-import s from "../Page/Page.module.scss";
 import { ScrollToTop } from "../../../../utils/ScrollToTop";
 import { ResponsiveGrid } from "../../GridComponent/GridComponent";
 import { useAppDispatch, useAppSelector } from "../../../../store/store";
 import { setOpenClose } from "../../../../store/tenderDataSlice";
+import s from "./ArticlePage.module.scss";
 
 export const ArticlesPage = () => {
     const [btnData, setBtnData] = useState<string>("");
@@ -28,12 +28,10 @@ export const ArticlesPage = () => {
         <Container maxWidth="xl">
             <Box sx={{ flexGrow: 1 }} className={s.box}>
                 <div className={s.heading}>
-                    <h3>ArticlesPage</h3>
+                    <h3>Помощь на электронных площадках</h3>
                 </div>
                 <div className={s.subtitle}>
-                    <div>
-                        <ResponsiveGrid grid={"grid2"} setBtnData={setBtnData} />
-                    </div>
+                    <ResponsiveGrid grid={"grid2"} setBtnData={setBtnData} />
                 </div>
             </Box>
         </Container>

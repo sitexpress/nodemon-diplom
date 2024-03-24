@@ -15,6 +15,7 @@ import { autoPlay } from "react-swipeable-views-utils";
 import s from "./SliderComponent.module.scss";
 import { ModeType, setOpenClose, setMode } from "../../../store/tenderDataSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/store";
+import { NavLink } from "react-router-dom";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const steps = [
@@ -93,17 +94,20 @@ export const SwipeableTextMobileStepper = () => {
                                 <h2 className={s.subtitle}>{steps[activeStep].description}</h2>
                             </Box>
                             <div className={s.btn_wrapper}>
-                                <Button
-                                    className={s.content_btn}
-                                    variant="outlined"
-                                    sx={{
-                                        background: "white",
-                                        color: "#42a5f5",
-                                        "&:hover": { background: "#42a5f5", color: "white" }
-                                    }}
-                                >
-                                    Узнать подробнее
-                                </Button>
+                                <NavLink className={s.footer_link} to="/tender-support">
+                                    <Button
+                                        className={s.content_btn}
+                                        variant="outlined"
+                                        sx={{
+                                            background: "white",
+                                            color: "#42a5f5",
+                                            "&:hover": { background: "#42a5f5", color: "white" }
+                                        }}
+                                    >
+                                        Узнать подробнее
+                                    </Button>
+                                </NavLink>
+
                                 <div className={s.hiddenBtn}>
                                     <Button
                                         className={s.btn}

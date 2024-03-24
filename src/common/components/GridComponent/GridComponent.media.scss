@@ -1,190 +1,636 @@
 @import "src/styles/index";
 
-@include widescreen-xxl {}
+@include widescreen-xxl {
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        //gap: 40px;
+        width: 1000px;
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            width: auto;
+            height: 2850px;
+            border: 1px solid lightgrey;
+            //padding: 20px;
+            padding-top: 20px;
+            .main_heading {
+                font-size: 32px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .grid2_wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 40px 40px;
+            //margin-right: 20px;
+
+            .services_grid2 {
+                display: flex;
+                flex-direction: column;
+                //align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+
+                .card_wrapper {
+                    text-align: center;
+                    height: 550px;
+                    max-width: 474px;
+                    padding: 20px;
+                    .heading {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .img_wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+
+                        img {
+                            width: 424px;
+                        }
+                    }
+                    .content_wrapper {
+                    }
+                }
+                .services_grid3_content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 40px;
+
+                    text-decoration: dotted;
+                    gap: 10px;
+
+                    .mark_icon {
+                        background: $palette_info_light;
+                    }
+
+                    .gc_li {
+                        display: flex;
+                        justify-content: flex-start;
+                        .descr {
+                            font-size: 16px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @include desktop-xl {
-  .services_grid1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px;
-    .btn3 {
-      width: 220px;
-      height: 40px;
-      font-size: 10px;
-    }
-    .btn_wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      .btn1 {
-        width: 130px;
-        height: 35px;
-        font-size: 10px;
-      }
-      .btn2 {
-        width: 130px;
-        height: 35px;
-        font-size: 10px;
-      }
-    }
-  }
-
-  .grid3_wrapper {
-    .services_grid3 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 300px;
-      gap: 20px;
-
-      .services_grid3_content {
+    .services_grid1 {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding-left: 0px;
-        text-decoration: dotted;
-
-        .mark_icon {
-          background: $palette_info_light;
+        align-items: center;
+        justify-content: space-between;
+        height: 400px;
+        .btn3 {
+            width: 220px;
+            height: 40px;
+            font-size: 10px;
         }
-        .gc_li {
-          display: flex;
-          justify-content: flex-start;
-          .descr {
-            font-size: 12px;
-            text-align: start;
-          }
+        .btn_wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            .btn1 {
+                width: 130px;
+                height: 35px;
+                font-size: 10px;
+            }
+            .btn2 {
+                width: 130px;
+                height: 35px;
+                font-size: 10px;
+            }
         }
-      }
     }
-  }
+
+    .grid3_wrapper {
+        .services_grid3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 300px;
+            gap: 20px;
+
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding-left: 0px;
+                text-decoration: dotted;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+                    .descr {
+                        font-size: 12px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        //gap: 40px;
+        width: 1000px;
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            width: 350px;
+            height: 2850px;
+            border: 1px solid lightgrey;
+            //padding: 20px;
+            padding-top: 20px;
+            .main_heading {
+                font-size: 32px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .grid2_wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 550px;
+            //margin-right: 20px;
+
+            .services_grid2 {
+                display: flex;
+                flex-direction: column;
+                //align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+
+                .card_wrapper {
+                    text-align: center;
+                    height: 550px;
+                    max-width: 400px;
+                    padding: 20px;
+                    .heading {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .img_wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+
+                        img {
+                            width: 350px;
+                        }
+                    }
+                    .content_wrapper {
+                    }
+                }
+                .services_grid3_content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 40px;
+
+                    text-decoration: dotted;
+                    gap: 10px;
+
+                    .mark_icon {
+                        background: $palette_info_light;
+                    }
+
+                    .gc_li {
+                        display: flex;
+                        justify-content: flex-start;
+                        .descr {
+                            font-size: 16px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @include laptop-lg {
-  .services_grid1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px;
-    .btn3 {
-      width: 200px;
-      height: 35px;
-      font-size: 10px;
-    }
-    .btn_wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      .btn1 {
-        width: 120px;
-        height: 35px;
-        font-size: 10px;
-      }
-      .btn2 {
-        width: 120px;
-        height: 35px;
-        font-size: 10px;
-      }
-    }
-  }
-
-  .grid3_wrapper {
-    .services_grid3 {
-      display: flex;
-      flex-direction: column;
-      height: 300px;
-      gap: 20px;
-
-      .services_grid3_content {
+    .services_grid1 {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-size: 10px;
-        text-decoration: dotted;
-
-        .mark_icon {
-          background: $palette_info_light;
+        align-items: center;
+        justify-content: space-between;
+        height: 400px;
+        .btn3 {
+            width: 200px;
+            height: 35px;
+            font-size: 10px;
         }
-        .gc_li {
-          display: flex;
-          justify-content: flex-start;
-          .descr {
-            font-size: 12px;
-            text-align: start;
-          }
+        .btn_wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            .btn1 {
+                width: 120px;
+                height: 35px;
+                font-size: 10px;
+            }
+            .btn2 {
+                width: 120px;
+                height: 35px;
+                font-size: 10px;
+            }
         }
-      }
     }
-  }
+
+    .grid3_wrapper {
+        .services_grid3 {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            gap: 20px;
+
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                font-size: 10px;
+                text-decoration: dotted;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+                    .descr {
+                        font-size: 12px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        //gap: 40px;
+        width: 600px;
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            width: 350px;
+            height: 2850px;
+            border: 1px solid lightgrey;
+            //padding: 20px;
+            padding-top: 20px;
+            .main_heading {
+                font-size: 32px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .grid2_wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 550px;
+            //margin-right: 20px;
+
+            .services_grid2 {
+                display: flex;
+                flex-direction: column;
+                //align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+
+                .card_wrapper {
+                    text-align: center;
+                    height: 550px;
+                    max-width: 400px;
+                    padding: 20px;
+                    .heading {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .img_wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+
+                        img {
+                            width: 350px;
+                        }
+                    }
+                    .content_wrapper {
+                    }
+                }
+                .services_grid3_content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 40px;
+
+                    text-decoration: dotted;
+                    gap: 10px;
+
+                    .mark_icon {
+                        background: $palette_info_light;
+                    }
+
+                    .gc_li {
+                        display: flex;
+                        justify-content: flex-start;
+                        .descr {
+                            font-size: 16px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-@include tablet-md {}
-@include mobile-sm {}
+@include tablet-md {
+    .box {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        //gap: 40px;
+        width: 600px;
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            width: 350px;
+            height: 2850px;
+            border: 1px solid lightgrey;
+            //padding: 20px;
+            padding-top: 20px;
+            .main_heading {
+                font-size: 32px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .grid2_wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 550px;
+            //margin-right: 20px;
+
+            .services_grid2 {
+                display: flex;
+                flex-direction: column;
+                //align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+
+                .card_wrapper {
+                    text-align: center;
+                    height: 550px;
+                    max-width: 400px;
+                    padding: 20px;
+                    .heading {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .img_wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+
+                        img {
+                            width: 350px;
+                        }
+                    }
+                    .content_wrapper {
+                    }
+                }
+                .services_grid3_content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 40px;
+
+                    text-decoration: dotted;
+                    gap: 10px;
+
+                    .mark_icon {
+                        background: $palette_info_light;
+                    }
+
+                    .gc_li {
+                        display: flex;
+                        justify-content: flex-start;
+                        .descr {
+                            font-size: 16px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile-sm {
+}
 @include mobile-xs {
-  .services_grid1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px;
-
-    .btn3 {
-      width: 170px;
-      height: 35px;
-      font-size: 8px;
-    }
-
-    .btn_wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-
-      .btn1 {
-        width: 100px;
-        height: 35px;
-        font-size: 8px;
-        text-align: center;
-      }
-
-      .btn2 {
-        width: 100px;
-        height: 35px;
-        font-size: 8px;
-        text-align: center;
-      }
-    }
-  }
-  .grid3_wrapper {
-    .services_grid3 {
-      display: flex;
-      flex-direction: column;
-      height: 300px;
-      gap: 20px;
-
-      .services_grid3_content {
+    .services_grid1 {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-size: 10px;
-        text-decoration: dotted;
+        align-items: center;
+        justify-content: space-between;
+        height: 400px;
 
-        .mark_icon {
-          background: $palette_info_light;
+        .btn3 {
+            width: 170px;
+            height: 35px;
+            font-size: 8px;
         }
-        .gc_li {
-          display: flex;
-          justify-content: flex-start;
-          .descr {
-            font-size: 12px;
-            text-align: start;
-          }
+
+        .btn_wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            .btn1 {
+                width: 100px;
+                height: 35px;
+                font-size: 8px;
+                text-align: center;
+            }
+
+            .btn2 {
+                width: 100px;
+                height: 35px;
+                font-size: 8px;
+                text-align: center;
+            }
         }
-      }
     }
-  }
-}
-@include mobile-xxs {}
+    .grid3_wrapper {
+        .services_grid3 {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            gap: 20px;
 
+            .services_grid3_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                font-size: 10px;
+                text-decoration: dotted;
+
+                .mark_icon {
+                    background: $palette_info_light;
+                }
+                .gc_li {
+                    display: flex;
+                    justify-content: flex-start;
+                    .descr {
+                        font-size: 12px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+    .box {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        //gap: 40px;
+        width: auto;
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            width: 350px;
+            height: 2850px;
+            border: 1px solid lightgrey;
+            //padding: 20px;
+            padding-top: 20px;
+            .main_heading {
+                font-size: 32px;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .grid2_wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 350px;
+            //margin-right: 20px;
+
+            .services_grid2 {
+                display: flex;
+                flex-direction: column;
+                //align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+
+                .card_wrapper {
+                    text-align: center;
+                    height: 550px;
+                    max-width: 350px;
+                    padding: 20px;
+                    .heading {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+                    .img_wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+
+                        img {
+                            width: 300px;
+                        }
+                    }
+                    .content_wrapper {
+                    }
+                }
+                .services_grid3_content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 40px;
+
+                    text-decoration: dotted;
+                    gap: 10px;
+
+                    .mark_icon {
+                        background: $palette_info_light;
+                    }
+
+                    .gc_li {
+                        display: flex;
+                        justify-content: flex-start;
+                        .descr {
+                            font-size: 16px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile-xxs {
+}

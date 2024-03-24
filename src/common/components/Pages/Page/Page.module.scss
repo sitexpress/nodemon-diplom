@@ -111,6 +111,12 @@
                 }
             }
         }
+        .btn_art {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 20px;
+        }
 
         .btn {
             //margin-top: 40px;

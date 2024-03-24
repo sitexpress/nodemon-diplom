@@ -54,12 +54,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                     <>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={uniliver}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={uniliver} alt="uniliver image" />
                                 </div>
@@ -78,12 +72,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={zeppelin}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={zeppelin} alt="uniliver image" />
                                 </div>
@@ -100,12 +88,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={rusagro}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={rusagro} alt="uniliver image" />
                                 </div>
@@ -123,12 +105,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={samsung}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={samsung} alt="uniliver image" />
                                 </div>
@@ -146,12 +122,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={uniliver}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={uniliver} alt="uniliver image" />
                                 </div>
@@ -170,12 +140,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={zeppelin}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={zeppelin} alt="uniliver image" />
                                 </div>
@@ -192,12 +156,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={rusagro}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={rusagro} alt="uniliver image" />
                                 </div>
@@ -215,12 +173,6 @@ export const FlickingCarousel: React.FC<FlickingCarouselType> = ({ type, ...othe
                         </div>
                         <div className={s.panel_reviews}>
                             <Card sx={{ maxWidth: 345 }} className={s.card_wrapper}>
-                                {/*<CardMedia*/}
-                                {/*    sx={{ height: 140 }}*/}
-                                {/*    image={samsung}*/}
-                                {/*    title="green iguana"*/}
-                                {/*    className={s.img_wrapper}*/}
-                                {/*/>*/}
                                 <div className={s.img_wrapper}>
                                     <img src={samsung} alt="uniliver image" />
                                 </div>

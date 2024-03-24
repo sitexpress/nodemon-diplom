@@ -51,13 +51,17 @@
             }
         }
         .btn_wrapper {
-            .content_btn {
-                margin-top: 10px;
-                width: 200px;
-                height: 50px;
-            }
             .hiddenBtn {
                 display: none;
+            }
+            .footer_link {
+                text-decoration: none;
+                color: $palette_info_main;
+                .content_btn {
+                    margin-top: 10px;
+                    width: 200px;
+                    height: 50px;
+                }
             }
         }
     }

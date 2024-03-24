@@ -21,6 +21,7 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import IconButton from "@mui/material/IconButton";
+import TextField from "@mui/material/TextField";
 
 type TenderPageType = {
     heading: string;
@@ -129,14 +130,6 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
         }
     };
 
-    const handleСlose = () => {
-        dispatch(
-            setOpenClose({
-                isOpen: !isOpen
-            })
-        );
-    };
-
     return (
         <div className={s.tenderContainer}>
             <NestedModal btnData={btnData} />
@@ -181,11 +174,13 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
             )}
 
             <section className={s.grid2}>{currentPage()}</section>
+
             <section
                 className={s.grid3}
                 style={{
-                    paddingBottom: pathname === "/contacts" || pathname === "/about" ? 40 : 0,
-                    paddingTop: pathname === "/contacts" || pathname === "/about" ? 0 : 100
+                    paddingBottom:
+                        pathname === "/contacts" || pathname === "/about" ? 40 : pathname === "/articles" ? 100 : 0,
+                    paddingTop: pathname === "/contacts" || pathname === "/about" || pathname === "/articles" ? 0 : 100
                 }}
             >
                 <Container maxWidth="xl">
@@ -193,16 +188,26 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
                         className={s.box}
                         style={{
                             flexGrow: 1,
-                            height: pathname === "/contacts" || pathname === "/about" ? 100 : 600,
-                            display: pathname === "/contacts" || pathname === "/about" ? "block" : "flex",
+                            height:
+                                pathname === "/contacts" || pathname === "/about" || pathname === "/articles"
+                                    ? 100
+                                    : 600,
+                            display:
+                                pathname === "/contacts" || pathname === "/about" || pathname === "/articles"
+                                    ? "block"
+                                    : "flex",
                             textAlign: pathname === "/contacts" ? "center" : "center",
-                            paddingTop: pathname === "/contacts" || pathname === "/about" ? 40 : 0
+                            paddingTop:
+                                pathname === "/contacts" || pathname === "/about" || pathname === "/articles" ? 40 : 0
                         }}
                     >
                         <div className={s.heading}>
                             <h2>{bottomHeading}</h2>
                         </div>
-                        <div className={s.subtitle}>{pathname !== "/about" ? <p> {subtitle}</p> : ""}</div>
+
+                        <div className={s.subtitle}>
+                            {pathname === "/about" || pathname === "/articles" ? "" : <p> {subtitle}</p>}
+                        </div>
                         {pathname === "/tender-support" ? (
                             <div className={s.bottom_moto_list}>
                                 <div className={s.moto}>
@@ -301,6 +306,13 @@ export const Page: React.FC<TenderPageType> = ({ heading, btnText, subtitle, bot
                             </div>
                         ) : (
                             ""
+                        )}
+
+                        {pathname === "/articles" && (
+                            <div className={s.btn_art}>
+                                <TextField id="outlined-basic" label="Введите свой e-mail" variant="outlined" />
+                                <Button variant="outlined">Подписаться</Button>
+                            </div>
                         )}
 
                         {btnText !== "" && (
